@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
-import { contact, copy, skillCells, type Lang, type ProjectId } from '../content';
+import { contact, copy, projectRepositories, skillCells, type Lang, type ProjectId } from '../content';
 
 interface Props {
   lang: Lang;
@@ -19,7 +19,7 @@ const liveLinks = links.filter((link) => link.href);
 
 /** Logo cells in build order: the C is drawn from top right to bottom right, the blue centre comes last. */
 const markCells: [number, number][] = [[2, 0], [1, 0], [0, 0], [0, 1], [0, 2], [1, 2], [2, 2]];
-const projectOrder: ProjectId[] = ['homelab', 'tickets', 'automation', 'colvex', 'portfolio', 'chromefever', 'kado'];
+const projectOrder: ProjectId[] = ['homelab', 'kado', 'chromefever', 'claudeskills', 'tickets', 'automation', 'colvex', 'portfolio'];
 /** Skill cells in reading order, so the mobile stack follows the 3x3 raster. */
 const rasterOrder = [
   ...skillCells.slice(0, 4),
@@ -67,11 +67,14 @@ const rasterOrder = [
           <li id={`p-${id}`} class:list={['project', { 'project--featured': i === 0 }]} data-reveal>
             <div class="project__body">
               <span class="chip"><Icon name={project.icon} size={18} />{project.category}</span>
-              <h3>{project.title}{project.status && <><span class="sr-only">, </span><span class="status">{t.projects.status[project.status]}</span></>}</h3>
+              <h3>{project.title}{project.status && <><span class="sr-only">, </span><span class="status" data-status={project.status}>{t.projects.status[project.status]}</span></>}</h3>
               <p class="project__summary">{project.summary}</p>
               {i === 0 ? <ul class="project__points">{project.points.map(point => <li>{point}</li>)}</ul> :
                 <details class="project__details"><summary aria-label={`${t.presentation.details}: ${project.title}`}>{t.presentation.details}<span aria-hidden="true">+</span></summary><ul class="project__points">{project.points.map(point => <li>{point}</li>)}</ul></details>}
               <ul class="tags tags--mono" aria-label="Stack">{project.stack.map(item => <li>{item}</li>)}</ul>
+              {projectRepositories[id]
+                ? <a class="project__source" href={projectRepositories[id]} aria-label={`${t.projects.source}: ${project.title}`}><Icon name="brand:github" size={18} />{t.projects.source}<Icon name="arrow-up-right" size={16} /></a>
+                : <span class="project__source project__source--private">{t.projects.privateSource}</span>}
             </div>
             {i === 0 && <figure class="system-map">
               <figcaption>{t.presentation.system}</figcaption>
