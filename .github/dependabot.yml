@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+    ignore:
+      # @astrojs/check 0.9.x accepts TypeScript 5 or 6 as a peer. A major bump breaks npm ci
+      # until @astrojs/check supports the new major.
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]

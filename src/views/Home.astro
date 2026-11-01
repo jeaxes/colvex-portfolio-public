@@ -1,0 +1,169 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { contact, copy, skillCells, type Lang, type ProjectId } from '../content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = copy[lang];
+const links = [
+  { label: t.contactSection.email, icon: 'mail', href: `mailto:${contact.email}`, text: contact.email },
+  { label: t.contactSection.github, icon: 'brand:github', href: contact.github, text: contact.github.replace(/^https:\/\//, '') },
+  /* Discord has no profile URL for a username, so it is shown as text. */
+  { label: t.contactSection.discord, icon: 'brand:discord', href: '', text: contact.discord },
+];
+const liveLinks = links.filter((link) => link.href);
+
+/** Logo cells in build order: the C is drawn from top right to bottom right, the blue centre comes last. */
+const markCells: [number, number][] = [[2, 0], [1, 0], [0, 0], [0, 1], [0, 2], [1, 2], [2, 2]];
+const projectOrder: ProjectId[] = ['homelab', 'tickets', 'automation', 'colvex', 'portfolio', 'chromefever', 'kado'];
+/** Skill cells in reading order, so the mobile stack follows the 3x3 raster. */
+const rasterOrder = [
+  ...skillCells.slice(0, 4),
+  'center' as const,
+  'open' as const,
+  ...skillCells.slice(4),
+];
+---
+
+<Base lang={lang} title={t.meta.title} description={t.meta.description} page="home">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__inner">
+      <div class="lockup">
+        <svg class="lockup__mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          {markCells.map(([x, y], i) => <rect class="lockup__cell" data-i={i} x={x * 36} y={y * 36} width="28" height="28" />)}
+          <rect class="lockup__cell lockup__cell--center" data-i="7" x="36" y="36" width="28" height="28" />
+        </svg>
+        <h1 id="hero-title" class="lockup__name">colvex<span class="lockup__dot" aria-hidden="true">.</span></h1>
+      </div>
+      <p class="hero__lead">{t.hero.lead}</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="#projects">{t.hero.primary}<Icon name="arrow-down" size={18} /></a>
+        <a class="btn btn--secondary" href="#contact">{t.hero.secondary}</a>
+      </div>
+      {liveLinks.length > 0 && (
+        <ul class="hero__links" aria-label={t.contactSection.title}>
+          {liveLinks.map((link) => (
+            <li><a href={link.href} aria-label={link.label}><Icon name={link.icon} size={20} /></a></li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+
+  <section id="projects" class="section container" aria-labelledby="projects-title">
+    <header class="section__head" data-reveal>
+      <h2 id="projects-title">{t.projects.title}</h2>
+      <p class="muted">{t.projects.intro}</p>
+      <p class="projects-hint">{t.projects.hint}</p>
+    </header>
+    <ol class="projects">
+      {projectOrder.map((id, i) => {
+        const project = t.projects.items[id];
+        return (
+          <li id={`p-${id}`} class:list={['project', { 'project--featured': i === 0 }]} data-reveal>
+            <div class="project__body">
+              <span class="chip"><Icon name={project.icon} size={18} />{project.category}</span>
+              <h3>{project.title}{project.status && <><span class="sr-only">, </span><span class="status">{t.projects.status[project.status]}</span></>}</h3>
+              <p class="project__summary">{project.summary}</p>
+              {i === 0 ? <ul class="project__points">{project.points.map(point => <li>{point}</li>)}</ul> :
+                <details class="project__details"><summary aria-label={`${t.presentation.details}: ${project.title}`}>{t.presentation.details}<span aria-hidden="true">+</span></summary><ul class="project__points">{project.points.map(point => <li>{point}</li>)}</ul></details>}
+              <ul class="tags tags--mono" aria-label="Stack">{project.stack.map(item => <li>{item}</li>)}</ul>
+            </div>
+            {i === 0 && <figure class="system-map">
+              <figcaption>{t.presentation.system}</figcaption>
+              <ol class="system-map__nodes">
+                <li><span>{t.presentation.server}</span><strong>Ubuntu Server</strong><Icon name="server" size={24} /></li>
+                <li><span>{t.presentation.containers}</span><strong>Docker Compose</strong><Icon name="workflow" size={24} /></li>
+                <li><span>{t.presentation.monitoring}</span><strong>Prometheus · Grafana</strong><Icon name="globe" size={24} /></li>
+                <li><span>{t.presentation.alerts}</span><strong>n8n · Telegram · Gitea</strong><Icon name="arrow-up-right" size={24} /></li>
+              </ol>
+            </figure>}
+          </li>
+        );
+      })}
+    </ol>
+  </section>
+
+  <section id="skills" class="section container" aria-labelledby="skills-title">
+    <header class="section__head" data-reveal>
+      <h2 id="skills-title">{t.skills.title}</h2>
+      <p class="muted">{t.skills.intro}</p>
+    </header>
+    <ul class="legend" aria-label={`${t.skills.legend.practice} / ${t.skills.legend.learning}`}>
+      <li><span class="tag-sample" aria-hidden="true"></span>{t.skills.legend.practice}</li>
+      <li><span class="tag-sample tag-sample--learning" aria-hidden="true"></span>{t.skills.legend.learning}</li>
+    </ul>
+    <div class="raster">
+      {rasterOrder.map((entry) => {
+        if (entry === 'center') return (
+          <article class="raster__cell raster__cell--center" data-col="2" data-row="2" data-reveal>
+            <h3><Icon name="sparkles" size={20} />{t.skills.center.title}</h3>
+            <ul class="tags">
+              {t.skills.center.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </article>
+        );
+        if (entry === 'open') return (
+          <article class="raster__cell raster__cell--open" data-col="3" data-row="2" data-reveal>
+            <h3>{t.skills.open.title}</h3>
+            <p>{t.skills.open.text}</p>
+          </article>
+        );
+        const cell = t.skills.cells[entry.id];
+        return (
+          <article class="raster__cell" data-col={entry.pos[0] + 1} data-row={entry.pos[1] + 1} data-reveal>
+            <h3>{cell.title}</h3>
+            <ul class="tags">
+              {cell.practice.map((item) => <li>{item}</li>)}
+              {cell.learning.map((item) => (
+                <li class="tag--learning">{item}<span class="sr-only"> ({t.skills.legend.learning})</span></li>
+              ))}
+            </ul>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <section id="about" class="section container" aria-labelledby="about-title">
+    <header class="section__head" data-reveal>
+      <h2 id="about-title">{t.about.title}</h2>
+    </header>
+    <div class="about">
+      <div class="about__text" data-reveal>
+        {t.about.personal.map((p) => <p class="lead">{p}</p>)}
+        <h3>{t.about.workTitle}</h3>
+        {t.about.work.map((p) => <p>{p}</p>)}
+      </div>
+      <dl class="card about__facts" data-reveal data-i="1">
+        {t.about.facts.map((fact) => (
+          <div>
+            <dt>{fact.label}</dt>
+            <dd>{fact.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact" class="section container" aria-labelledby="contact-title">
+    <div class="card contact" data-reveal>
+      <h2 id="contact-title">{t.contactSection.heading}</h2>
+      <p class="lead">{t.contactSection.text}</p>
+      <ul class="contact__links">
+        {links.map((link) => (
+          <li>
+            <span class="contact__label"><Icon name={link.icon} size={18} />{link.label}</span>
+            {link.href
+              ? <a href={link.href} rel={link.href.startsWith('https') ? 'me noopener' : undefined}>{link.text}<Icon name="arrow-up-right" size={16} /></a>
+              : <span class="contact__value">{link.text}</span>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Base>

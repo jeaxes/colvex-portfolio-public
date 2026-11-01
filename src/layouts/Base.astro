@@ -1,0 +1,102 @@
+---
+import '../styles/global.css';
+import Logo from '../components/Logo.astro';
+import { copy, routes, type Lang } from '../content';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  /** Route key of this page, used for language switch and hreflang. */
+  page: keyof typeof routes | null;
+  noindex?: boolean;
+}
+
+const { lang, title, description, page, noindex = false } = Astro.props;
+const t = copy[lang];
+const site = Astro.site ?? new URL('https://colvex.io');
+const canonical = page ? new URL(routes[page][lang], site).href : null;
+const home = routes.home[lang];
+const sections = [
+  ['projects', t.nav.projects],
+  ['skills', t.nav.skills],
+  ['about', t.nav.about],
+  ['contact', t.nav.contact],
+] as const;
+/** Background squares taken from the logo: true = blue. Position and size live in global.css (.backdrop__square:nth-child) because a strict CSP forbids inline style. */
+const squares: boolean[] = [false, false, true, false, false, true, false, false];
+const prefix = page === 'home' ? '' : home;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    {page && (['en', 'de'] as const).map((l) => <link rel="alternate" hreflang={l} href={new URL(routes[page][l], site).href} />)}
+    {page && <link rel="alternate" hreflang="x-default" href={new URL(routes[page].en, site).href} />}
+    <meta name="theme-color" content="#05070d" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preload" href="/fonts/albert-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/albert-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_US'} />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">{t.a11y.skip}</a>
+    <div class="backdrop" aria-hidden="true">
+      {squares.map((blue, i) => (
+        <span class:list={['backdrop__square', { 'backdrop__square--blue': blue }]} data-i={i}></span>
+      ))}
+    </div>
+    <header class:list={['site-header', page === 'home' ? 'site-header--auto' : 'is-scrolled']}>
+      <div class="site-header__inner">
+        <a class="site-header__logo" href={home} aria-label={t.a11y.home}><Logo /></a>
+        <nav class="site-nav" aria-label={t.a11y.nav}>
+          <ul class="site-nav__list">
+            {sections.map(([id, label]) => <li><a href={`${prefix}#${id}`} data-section={id}>{label}</a></li>)}
+          </ul>
+          <div class="lang-switch" role="group" aria-label={t.a11y.langSwitch}>
+            <a
+              class:list={['lang-switch__item', { 'is-active': lang === 'de' }]}
+              href={routes[page ?? 'home'].de}
+              hreflang="de" lang="de"
+              aria-label="Deutsch"
+              aria-current={lang === 'de' ? 'true' : undefined}>DE</a>
+            <a
+              class:list={['lang-switch__item', { 'is-active': lang === 'en' }]}
+              href={routes[page ?? 'home'].en}
+              hreflang="en" lang="en"
+              aria-label="English"
+              aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
+          </div>
+          <details class="menu">
+            <summary class="menu__toggle"><span class="sr-only">{t.a11y.menu}</span></summary>
+            <ul class="menu__list">
+              {sections.map(([id, label]) => <li><a href={`${prefix}#${id}`} data-section={id}>{label}</a></li>)}
+            </ul>
+          </details>
+        </nav>
+      </div>
+    </header>
+    <main id="content" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <span>© {new Date().getFullYear()} colvex</span>
+      </div>
+    </footer>
+    <script is:inline src="/site.js" defer></script>
+  </body>
+</html>

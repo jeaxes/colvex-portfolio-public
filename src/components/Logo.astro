@@ -1,0 +1,29 @@
+---
+import wordmarkPath from '../assets/wordmark-path.txt?raw';
+
+/**
+ * Horizontal "Raster" logo from the Colvex Brand Kit 2.0, inlined as SVG.
+ * The wordmark is imported with `?raw` so it enters the bundle instead of being read at render time.
+ */
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+const cells: [number, number][] = [
+  [51.84, 0],
+  [25.92, 0],
+  [0, 0],
+  [0, 25.92],
+  [0, 51.84],
+  [25.92, 51.84],
+  [51.84, 51.84],
+];
+const word = wordmarkPath.trim();
+---
+
+<svg class="logo" viewBox="0 0 396 73" xmlns="http://www.w3.org/2000/svg" role={title ? 'img' : undefined} aria-label={title} aria-hidden={title ? undefined : 'true'} focusable="false">
+  {cells.map(([x, y]) => <rect x={x} y={y} width="20.16" height="20.16" fill="#fff" />)}
+  <rect x="25.92" y="25.92" width="20.16" height="20.16" fill="#4c8dff" />
+  <path fill="#fff" transform="translate(100 0)" d={word} />
+</svg>

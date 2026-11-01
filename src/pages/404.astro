@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { copy, routes } from '../content';
+
+const en = copy.en.notFound;
+const de = copy.de.notFound;
+---
+
+<Base lang="en" title={`${en.title} | colvex`} description={en.text} page={null} noindex>
+  <section class="section container prose prose--page">
+    <h1>{en.title}</h1>
+    <p>{en.text} <a href={routes.home.en}>{en.back}</a></p>
+    <p lang="de">{de.text} <a href={routes.home.de}>{de.back}</a></p>
+  </section>
+</Base>

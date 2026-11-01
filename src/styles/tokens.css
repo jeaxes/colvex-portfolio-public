@@ -1,0 +1,185 @@
+/* Colvex Design-Tokens 2.0 – Blau-Schwarz. Standard: dunkel. Hell: [data-theme="light"] und Druck. */
+:root {
+  /* Night – Blau-Schwarz */
+  --color-night-950: #030409;
+  --color-night-900: #05070d;
+  --color-night-850: #080b13;
+  --color-night-800: #0c1018;
+  --color-night-750: #111723;
+  --color-night-700: #171e2c;
+  --color-night-600: #1e2738;
+  --color-night-500: #2c374c;
+  --color-night-400: #4a566d;
+  --color-night-300: #6f7a90;
+  --color-night-200: #a1abbd;
+  --color-night-100: #c9d0dc;
+  --color-night-50:  #e8ecf3;
+  --color-white: #ffffff;
+
+  /* Accent – elektrisches Blau */
+  --color-accent-50:  #eef4ff;
+  --color-accent-100: #dbe7ff;
+  --color-accent-200: #b9d2ff;
+  --color-accent-300: #93bbff;
+  --color-accent-400: #6fa3ff;
+  --color-accent-500: #4c8dff;
+  --color-accent-600: #2563d8; /* Druckblau */
+  --color-accent-700: #1c4fb0;
+  --color-accent-800: #173d87;
+  --color-accent-900: #112b5e;
+
+  /* Ice – Stahlblau, nur Details */
+  --color-ice-100: #e6ecf5;
+  --color-ice-200: #cdd8ea;
+  --color-ice-300: #b6c6e0;
+  --color-ice-400: #9fb4d6;
+  --color-ice-600: #5f7699;
+
+  /* Rollen – dunkel (Standard) */
+  --color-bg: var(--color-night-900);
+  --color-bg-deep: var(--color-night-950);
+  --color-surface: var(--color-night-800);
+  --color-card: var(--color-night-750);
+  --color-border: rgb(255 255 255 / 0.08);
+  --color-border-strong: rgb(255 255 255 / 0.14);
+  /* Borders that carry meaning (WCAG 1.4.11 non-text contrast, at least 3:1). */
+  --color-border-graphic: var(--color-night-300);
+  --color-border-solid: var(--color-night-600);
+  --color-text: var(--color-night-50);
+  --color-text-muted: var(--color-night-200);
+  --color-detail: var(--color-ice-400);
+  --color-action: var(--color-accent-500);
+  --color-action-hover: var(--color-accent-400);
+  --color-action-active: var(--color-accent-300);
+  --color-on-action: var(--color-night-900);
+  --color-link: var(--color-accent-400);
+  --color-link-hover: var(--color-accent-300);
+  --color-highlight: var(--color-accent-500);
+  --color-focus: var(--color-accent-400);
+
+  --color-success-text: #5fd39a; --color-success-bg: #0d2219; --color-success-border: #1f5a3f;
+  --color-warning-text: #f2c55c; --color-warning-bg: #261d0a; --color-warning-border: #6b5216;
+  --color-error-text:   #ff8a80; --color-error-bg:   #2a1112; --color-error-border:   #7a2e2b;
+  --color-info-text:    #5fd0d6; --color-info-bg:    #0b2224; --color-info-border:    #1d5a5e;
+
+  --color-chart-1: #4c8dff; --color-chart-2: #f2a93b; --color-chart-3: #dbe7ff; --color-chart-4: #8a6a2e;
+
+  /* Glas – nur einzelne Elemente */
+  --glass-bg: rgb(17 23 35 / 0.62);
+  --glass-bg-fallback: var(--color-night-750);
+  --glass-border: rgb(255 255 255 / 0.09);
+  --glass-blur: 16px;
+
+  /* Schrift (unverändert aus 1.0) */
+  --font-sans: "Albert Sans", "Noto Sans JP", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-jp: "Noto Sans JP", "Albert Sans", sans-serif;
+  --font-weight-regular: 400; --font-weight-medium: 500; --font-weight-semibold: 600; --font-weight-bold: 700;
+  --font-size-display: 4rem;     --line-height-display: 1.05;
+  --font-size-h1: 3rem;          --line-height-h1: 1.1;
+  --font-size-h2: 2.25rem;       --line-height-h2: 1.15;
+  --font-size-h3: 1.5rem;        --line-height-h3: 1.25;
+  --font-size-h4: 1.25rem;       --line-height-h4: 1.3;
+  --font-size-body-lg: 1.125rem;
+  --font-size-body: 1rem;
+  --line-height-body: 1.65;      /* hell auf dunkel: +0,1 gegenüber 1.0 */
+  --letter-spacing-body: 0.005em;/* hell auf dunkel */
+  --font-size-small: 0.875rem;   --line-height-small: 1.55;
+  --font-size-caption: 0.75rem;  --letter-spacing-caption: 0.08em;
+  --letter-spacing-tight: -0.02em;
+
+  /* Abstände, Raster */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px;
+  --space-6: 32px; --space-7: 48px; --space-8: 64px; --space-9: 96px; --space-10: 128px;
+  --grid-columns: 12; --grid-gutter: 24px; --grid-margin: 32px;
+  --container-max: 1440px; --container-text: 1200px; --measure: 68ch;
+  --breakpoint-tablet: 640px; --breakpoint-desktop: 1024px; --breakpoint-wide: 1280px;
+
+  /* Formen */
+  --radius-none: 0;      /* Logo, Raster-Motiv, Diagrammknoten */
+  --radius-input: 10px;
+  --radius-button: 12px;
+  --radius-card: 20px;
+  --radius-card-lg: 24px;
+  --radius-badge: 999px;
+  --radius-app-icon: 22.37%;
+  --border-hairline: 1px; --border-rule: 2px; --border-focus: 2px;
+  --shadow-card: 0 1px 0 rgb(255 255 255 / 0.04) inset, 0 12px 32px rgb(0 0 0 / 0.35);
+  --shadow-overlay: 0 24px 64px rgb(0 0 0 / 0.5);
+
+  /* Bewegung */
+  --motion-fast: 150ms;
+  --motion-base: 240ms;
+  --motion-slow: 600ms;
+  --motion-ease: cubic-bezier(0.2, 0, 0, 1);
+  --motion-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --motion-logo-cell: 90ms;      /* Versatz je Feld */
+  --motion-word: 70ms;           /* Versatz je Wort */
+  --motion-reveal: 700ms;
+  --motion-flow-dot: 2400ms;
+  --motion-count: 1200ms;
+  --motion-lift: -3px;
+}
+
+@media (max-width: 639px) {
+  :root {
+    --font-size-display: 2.5rem; --font-size-h1: 2rem; --font-size-h2: 1.625rem;
+    --font-size-h3: 1.25rem; --font-size-h4: 1.125rem; --font-size-body-lg: 1.0625rem;
+    --grid-gutter: 16px; --grid-margin: 20px;
+  }
+}
+
+[data-theme="light"] {
+  --color-bg: var(--color-white);
+  --color-bg-deep: #f5f7fa;
+  --color-surface: #f5f7fa;
+  --color-card: var(--color-white);
+  --color-border: #dde2ea;
+  --color-border-strong: #c3cad6;
+  --color-border-graphic: var(--color-night-400);
+  --color-border-solid: #dde2ea;
+  --color-text: var(--color-night-900);
+  --color-text-muted: var(--color-night-400);
+  --color-detail: var(--color-ice-600);
+  --color-action: var(--color-accent-600);
+  --color-action-hover: var(--color-accent-700);
+  --color-action-active: var(--color-accent-800);
+  --color-on-action: var(--color-white);
+  --color-link: var(--color-accent-600);
+  --color-link-hover: var(--color-accent-800);
+  --color-highlight: var(--color-accent-600);
+  --color-focus: var(--color-accent-600);
+  --line-height-body: 1.55; --letter-spacing-body: 0;
+  --color-success-text: #1e7a4a; --color-success-bg: #e6f5ec; --color-success-border: #9fd6b8;
+  --color-warning-text: #8a5a00; --color-warning-bg: #fdf3d8; --color-warning-border: #e8c66a;
+  --color-error-text:   #c0322a; --color-error-bg:   #fdecea; --color-error-border:   #efaaa4;
+  --color-info-text:    #0f6e74; --color-info-bg:    #e3f5f5; --color-info-border:    #8fd0d2;
+  --color-chart-1: #2563d8; --color-chart-2: #c46f00; --color-chart-3: #93bbff; --color-chart-4: #f2c98a;
+  --glass-bg: rgb(255 255 255 / 0.72); --glass-bg-fallback: #ffffff; --glass-border: rgb(5 7 13 / 0.08);
+  --shadow-card: 0 1px 2px rgb(5 7 13 / 0.06);
+  --shadow-overlay: 0 16px 48px rgb(5 7 13 / 0.16);
+}
+
+@media print {
+  :root {
+    --color-bg: #ffffff; --color-surface: #f5f7fa; --color-card: #ffffff; --color-border: #dde2ea;
+    --color-text: #05070d; --color-text-muted: #4a566d; --color-action: #2563d8; --color-link: #2563d8;
+    --color-on-action: #ffffff; --color-highlight: #2563d8; --shadow-card: none;
+  }
+}
+
+.glass {
+  background: var(--glass-bg-fallback);
+  border: 1px solid var(--glass-border);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass { background: var(--glass-bg); -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-fast: 0ms; --motion-base: 0ms; --motion-slow: 0ms; --motion-reveal: 0ms; --motion-count: 0ms; --motion-lift: 0px; }
+  *, *::before, *::after { animation: none !important; transition-duration: 0ms !important; scroll-behavior: auto !important; }
+}
+
+.tabular, .price { font-variant-numeric: tabular-nums; }
+:focus-visible { outline: var(--border-focus) solid var(--color-focus); outline-offset: 2px; }

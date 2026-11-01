@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.env
+.DS_Store
+.wrangler/
+public/fonts/
+.env.*
+!.env.example
+*.pem
+*.key
+.vscode/
+.idea/
+Thumbs.db

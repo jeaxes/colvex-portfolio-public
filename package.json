@@ -1,0 +1,30 @@
+{
+  "name": "colvex-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "fonts": "node scripts/fonts.mjs",
+    "dev": "node scripts/fonts.mjs && astro dev",
+    "build": "node scripts/fonts.mjs && astro build && node scripts/check-placeholders.mjs",
+    "preview": "astro preview",
+    "deploy": "npm run build && wrangler deploy",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource/albert-sans": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "astro": "^7.3.5",
+    "lucide-static": "^1.66.0",
+    "simple-icons": "^16.36.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.156.0"
+  }
+}
