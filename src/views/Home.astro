@@ -66,8 +66,11 @@ const rasterOrder = [
         return (
           <li id={`p-${id}`} class:list={['project', { 'project--featured': i === 0 }]} data-reveal>
             <div class="project__body">
-              <span class="chip"><Icon name={project.icon} size={18} />{project.category}</span>
-              <h3>{project.title}{project.status && <><span class="sr-only">, </span><span class="status" data-status={project.status}>{t.projects.status[project.status]}</span></>}</h3>
+              <div class="project__meta">
+                <span class="chip"><Icon name={project.icon} size={18} />{project.category}</span>
+                {project.status && <span class="status" data-status={project.status}>{t.projects.status[project.status]}</span>}
+              </div>
+              <h3>{project.title}</h3>
               <p class="project__summary">{project.summary}</p>
               {i === 0 ? <ul class="project__points">{project.points.map(point => <li>{point}</li>)}</ul> :
                 <details class="project__details"><summary aria-label={`${t.presentation.details}: ${project.title}`}>{t.presentation.details}<span aria-hidden="true">+</span></summary><ul class="project__points">{project.points.map(point => <li>{point}</li>)}</ul></details>}
