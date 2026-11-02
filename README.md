@@ -6,7 +6,7 @@ It is a static [Astro 7](https://astro.build) site in the Colvex Brand Kit 2.0. 
 
 The site sets no cookies of its own and loads nothing from third parties. It is hosted on Cloudflare, which adds its own layer on top: depending on the zone settings, Cloudflare injects a bot-protection script (`/cdn-cgi/challenge-platform`) and prefetch hints into the served page. The strict CSP (see below) allows scripts from the site origin only, so an injected inline script is blocked. What Cloudflare itself does with a visitor stays outside the site's control.
 
-A small script, `public/site.js`, adds a few enhancements:
+A small script, bundled from `src/scripts/site.ts`, adds a few enhancements:
 - the scroll reveals
 - the top bar that turns into a pill on scroll
 - the mobile menu behaviour
@@ -49,7 +49,7 @@ Never commit `.env`, tokens or any other credentials. The site needs none.
 | `src/layouts/Base.astro` | Head, top bar, background, footer |
 | `src/styles/tokens.css` | Brand Kit 2.0 tokens, unchanged |
 | `src/styles/global.css` | Portfolio styles |
-| `public/site.js` | Progressive enhancements |
+| `src/scripts/site.ts` | Progressive enhancements, bundled and fingerprinted with the build |
 | `public/_headers` | Security headers, including a strict Content Security Policy |
 | `public/_redirects` | Redirects for old addresses (`/en/`, removed privacy pages) |
 | `scripts/` | Font copy and the placeholder check |

@@ -1,10 +1,10 @@
 // Progressive enhancements. Every part of the page works without this file.
 
 // 1. Mobile menu: close after a link is chosen, on Escape and on a click outside.
-const menu = document.querySelector('.menu');
+const menu = document.querySelector<HTMLDetailsElement>('.menu');
 if (menu) {
   menu.addEventListener('click', (event) => {
-    if (event.target.closest('a')) menu.open = false;
+    if (event.target instanceof Element && event.target.closest('a')) menu.open = false;
   });
   document.addEventListener('click', (event) => {
     if (menu.open && event.target instanceof Element && !menu.contains(event.target)) menu.open = false;
@@ -30,15 +30,15 @@ if (header) {
 }
 
 // 3. Mark the nav link of the section in view (blue). Uses aria-current so screen readers hear it too.
-const navLinks = [...document.querySelectorAll('a[data-section]')];
+const navLinks = [...document.querySelectorAll<HTMLAnchorElement>('a[data-section]')];
 const tracked = [...new Set(navLinks.map((link) => link.dataset.section))]
-  .map((id) => document.getElementById(id))
-  .filter(Boolean);
+  .map((id) => document.getElementById(id ?? ''))
+  .filter((section): section is HTMLElement => section !== null);
 if (tracked.length) {
   const syncCurrent = () => {
     const line = window.innerHeight * 0.35;
     const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-    let current = null;
+    let current: string | null = null;
     for (const section of tracked) {
       if (section.getBoundingClientRect().top <= line) current = section.id;
     }
@@ -73,10 +73,10 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
 
 // 5. Copy button: copies a contact value (the Discord name) to the clipboard and confirms
 //    with a visible label change plus a status announcement for screen readers.
-for (const button of document.querySelectorAll('.copy-btn')) {
+for (const button of document.querySelectorAll<HTMLButtonElement>('.copy-btn')) {
   const status = button.parentElement?.querySelector('[role="status"]');
   const label = button.textContent ?? '';
-  let reset;
+  let reset: ReturnType<typeof setTimeout> | undefined;
   button.addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(button.dataset.copy || '');

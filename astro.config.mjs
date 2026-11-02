@@ -14,4 +14,7 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false },
   },
   build: { inlineStylesheets: 'never' },
+  /* The CSP allows external scripts only. Astro inlines script chunks smaller than this Vite
+     limit by default, so it is set to 0 to keep bundled scripts out of the HTML. */
+  vite: { build: { assetsInlineLimit: 0 } },
 });
