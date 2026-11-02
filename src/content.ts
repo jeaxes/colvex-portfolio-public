@@ -96,7 +96,7 @@ interface Copy {
     open: { title: string; text: string };
   };
   about: { title: string; personal: string[]; workTitle: string; work: string[]; facts: { label: string; value: string }[] };
-  contactSection: { title: string; heading: string; text: string; email: string; github: string; discord: string };
+  contactSection: { title: string; heading: string; text: string; email: string; github: string; discord: string; copy: string; copied: string };
   notFound: { title: string; text: string; back: string };
 }
 
@@ -344,6 +344,8 @@ export const copy: Record<Lang, Copy> = {
       email: 'E-Mail',
       github: 'GitHub',
       discord: 'Discord',
+      copy: 'Kopieren',
+      copied: 'Kopiert',
     },
     notFound: { title: 'Seite nicht gefunden', text: 'Diese Adresse gibt es hier nicht.', back: 'Zur Startseite' },
   },
@@ -590,6 +592,8 @@ export const copy: Record<Lang, Copy> = {
       email: 'Email',
       github: 'GitHub',
       discord: 'Discord',
+      copy: 'Copy',
+      copied: 'Copied',
     },
     notFound: { title: 'Page not found', text: 'This address does not exist here.', back: 'Back to home' },
   },

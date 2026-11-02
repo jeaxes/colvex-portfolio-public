@@ -163,7 +163,11 @@ const rasterOrder = [
             <span class="contact__label"><Icon name={link.icon} size={18} />{link.label}</span>
             {link.href
               ? <a href={link.href} rel={link.href.startsWith('https') ? 'me noopener' : undefined}>{link.text}<Icon name="arrow-up-right" size={16} /></a>
-              : <span class="contact__value">{link.text}</span>}
+              : <span class="contact__value">
+                  {link.text}
+                  <button class="copy-btn" type="button" data-copy={link.text} data-copied={t.contactSection.copied}>{t.contactSection.copy}</button>
+                  <span class="sr-only" role="status"></span>
+                </span>}
           </li>
         ))}
       </ul>

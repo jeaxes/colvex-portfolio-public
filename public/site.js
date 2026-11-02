@@ -67,3 +67,27 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
     }
   }
 }
+
+// 5. Copy button: copies a contact value (the Discord name) to the clipboard and confirms
+//    with a visible label change plus a status announcement for screen readers.
+for (const button of document.querySelectorAll('.copy-btn')) {
+  const status = button.parentElement?.querySelector('[role="status"]');
+  const label = button.textContent ?? '';
+  let reset;
+  button.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(button.dataset.copy || '');
+    } catch {
+      return; // No clipboard access: the value stays selectable as plain text.
+    }
+    button.classList.add('is-copied');
+    button.textContent = button.dataset.copied || '';
+    if (status) status.textContent = button.dataset.copied || '';
+    clearTimeout(reset);
+    reset = setTimeout(() => {
+      button.classList.remove('is-copied');
+      button.textContent = label;
+      if (status) status.textContent = '';
+    }, 2000);
+  });
+}
