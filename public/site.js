@@ -1,15 +1,18 @@
 // Progressive enhancements. Every part of the page works without this file.
 
-// 1. Mobile menu: close after a link is chosen and on Escape.
+// 1. Mobile menu: close after a link is chosen, on Escape and on a click outside.
 const menu = document.querySelector('.menu');
 if (menu) {
   menu.addEventListener('click', (event) => {
     if (event.target.closest('a')) menu.open = false;
   });
+  document.addEventListener('click', (event) => {
+    if (menu.open && event.target instanceof Element && !menu.contains(event.target)) menu.open = false;
+  });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && menu.open) {
       menu.open = false;
-      menu.querySelector('summary').focus();
+      menu.querySelector('summary')?.focus();
     }
   });
 }
