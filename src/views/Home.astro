@@ -161,18 +161,22 @@ const rasterOrder = [
       <h2 id="contact-title">{t.contactSection.heading}</h2>
       <p class="lead">{t.contactSection.text}</p>
       <ul class="contact__links">
-        {links.map((link) => (
-          <li>
-            <span class="contact__label"><Icon name={link.icon} size={18} />{link.label}</span>
-            {link.href
-              ? <a href={link.href} rel={link.href.startsWith('https') ? 'me noopener' : undefined}>{link.text}<Icon name="arrow-up-right" size={16} /></a>
-              : <span class="contact__value">
-                  {link.text}
-                  <button class="copy-btn" type="button" data-copy={link.text} data-copied={t.contactSection.copied}>{t.contactSection.copy}</button>
-                  <span class="sr-only" role="status"></span>
-                </span>}
-          </li>
-        ))}
+        <li>
+          <span class="contact__label"><Icon name="mail" size={18} />{t.contactSection.email}</span>
+          <a class="contact__btn btn--primary" href={`mailto:${contact.email}`}>{contact.email}<Icon name="arrow-up-right" size={16} /></a>
+        </li>
+        <li>
+          <span class="contact__label"><Icon name="brand:github" size={18} />{t.contactSection.github}</span>
+          <a class="contact__btn btn--secondary" href={contact.github} rel="me noopener">{contact.github.replace(/^https:\/\//, '')}<Icon name="arrow-up-right" size={16} /></a>
+        </li>
+        <li>
+          <span class="contact__label"><Icon name="brand:discord" size={18} />{t.contactSection.discord}</span>
+          <span class="contact__value">
+            {contact.discord}
+            <button class="copy-btn" type="button" data-copy={contact.discord} data-copied={t.contactSection.copied}>{t.contactSection.copy}</button>
+            <span class="sr-only" role="status"></span>
+          </span>
+        </li>
       </ul>
     </div>
   </section>
