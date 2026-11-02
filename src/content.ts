@@ -81,6 +81,7 @@ interface Copy {
     title: string;
     intro: string;
     hint: string;
+    stack: string;
     source: string;
     privateSource: string;
     status: Record<ProjectStatus, string>;
@@ -125,6 +126,7 @@ export const copy: Record<Lang, Copy> = {
       "title": "Meine Projekte",
       "intro": "Was ich betreibe, ausprobiere und weiterentwickle. Zu öffentlichen Projekten findest du den Code direkt auf GitHub.",
       "hint": "Viele Projekte baue ich mit Claude Code. Ziel, Aufbau und Prüfung kommen von mir.",
+      "stack": "Technologien",
       "source": "Code auf GitHub",
       "privateSource": "Privates Projekt",
       "status": {
@@ -370,6 +372,7 @@ export const copy: Record<Lang, Copy> = {
       "title": "My projects",
       "intro": "What I run, experiment with and keep developing. Public projects link directly to their source on GitHub.",
       "hint": "I build many of these with Claude Code. The goals, structure and review come from me.",
+      "stack": "Stack",
       "source": "View source on GitHub",
       "privateSource": "Private project",
       "status": {

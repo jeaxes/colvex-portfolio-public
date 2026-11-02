@@ -71,7 +71,7 @@ const rasterOrder = [
               <p class="project__summary">{project.summary}</p>
               {i === 0 ? <ul class="project__points">{project.points.map(point => <li>{point}</li>)}</ul> :
                 <details class="project__details"><summary aria-label={`${t.presentation.details}: ${project.title}`}>{t.presentation.details}<span aria-hidden="true">+</span></summary><ul class="project__points">{project.points.map(point => <li>{point}</li>)}</ul></details>}
-              <ul class="tags tags--mono" aria-label="Stack">{project.stack.map(item => <li>{item}</li>)}</ul>
+              <ul class="tags tags--mono" aria-label={t.projects.stack}>{project.stack.map(item => <li>{item}</li>)}</ul>
               {projectRepositories[id]
                 ? <a class="project__source" href={projectRepositories[id]} aria-label={`${t.projects.source}: ${project.title}`}><Icon name="brand:github" size={18} />{t.projects.source}<Icon name="arrow-up-right" size={16} /></a>
                 : <span class="project__source project__source--private">{t.projects.privateSource}</span>}
