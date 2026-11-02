@@ -123,182 +123,182 @@ export const copy: Record<Lang, Copy> = {
     },
     presentation: { details: 'Einblick ins Projekt', system: 'So hängt mein Homelab zusammen', server: 'Basis', containers: 'Dienste', monitoring: 'Monitoring', alerts: 'Meldungen' },
     projects: {
-      "title": "Meine Projekte",
-      "intro": "Was ich betreibe, ausprobiere und weiterentwickle. Zu öffentlichen Projekten findest du den Code direkt auf GitHub.",
-      "hint": "Viele Projekte baue ich mit Claude Code. Ziel, Aufbau und Prüfung kommen von mir.",
-      "stack": "Technologien",
-      "source": "Code auf GitHub",
-      "privateSource": "Privates Projekt",
-      "status": {
-        "wip": "Im Bau",
-        "prototype": "Spielbarer Prototyp",
-        "active": "In Nutzung",
-        "live": "Online"
+      'title': 'Meine Projekte',
+      'intro': 'Was ich betreibe, ausprobiere und weiterentwickle. Zu öffentlichen Projekten findest du den Code direkt auf GitHub.',
+      'hint': 'Viele Projekte baue ich mit Claude Code. Ziel, Aufbau und Prüfung kommen von mir.',
+      'stack': 'Technologien',
+      'source': 'Code auf GitHub',
+      'privateSource': 'Privates Projekt',
+      'status': {
+        'wip': 'Im Bau',
+        'prototype': 'Spielbarer Prototyp',
+        'active': 'In Nutzung',
+        'live': 'Online'
       },
-      "items": {
-        "homelab": {
-          "icon": "server",
-          "status": "active",
-          "category": "Homelab und Betrieb",
-          "title": "Mein Homelab: Server, Dienste und Monitoring",
-          "summary": "Mein Ubuntu-Server mit Docker Compose. Hier verbinde ich selbst gehostete Dienste, Monitoring und Automatisierung.",
-          "points": [
-            "Traefik bündelt den Zugriff auf die Dienste; administrative Oberflächen erreiche ich über SSH-Tunnel",
-            "Prometheus, Grafana und Uptime Kuma für Metriken und Verfügbarkeit, Loki und Alloy für Logs",
-            "Gitea, n8n und weitere Dienste als getrennte Compose-Projekte mit eigener Konfiguration",
-            "Öffentliche Vorlagen sowie Skripte für Einrichtung, Zustandsprüfungen und Backups mit sieben Tagen Aufbewahrung"
+      'items': {
+        'homelab': {
+          'icon': 'server',
+          'status': 'active',
+          'category': 'Homelab und Betrieb',
+          'title': 'Mein Homelab: Server, Dienste und Monitoring',
+          'summary': 'Mein Ubuntu-Server mit Docker Compose. Hier verbinde ich selbst gehostete Dienste, Monitoring und Automatisierung.',
+          'points': [
+            'Traefik bündelt den Zugriff auf die Dienste; administrative Oberflächen erreiche ich über SSH-Tunnel',
+            'Prometheus, Grafana und Uptime Kuma für Metriken und Verfügbarkeit, Loki und Alloy für Logs',
+            'Gitea, n8n und weitere Dienste als getrennte Compose-Projekte mit eigener Konfiguration',
+            'Öffentliche Vorlagen sowie Skripte für Einrichtung, Zustandsprüfungen und Backups mit sieben Tagen Aufbewahrung'
           ],
-          "stack": [
-            "Ubuntu",
-            "Docker Compose",
-            "Traefik",
-            "Prometheus",
-            "Grafana",
-            "Loki",
-            "n8n",
-            "Gitea"
+          'stack': [
+            'Ubuntu',
+            'Docker Compose',
+            'Traefik',
+            'Prometheus',
+            'Grafana',
+            'Loki',
+            'n8n',
+            'Gitea'
           ]
         },
-        "kado": {
-          "icon": "monitor",
-          "status": "wip",
-          "category": "Windows und Entwicklung",
-          "title": "Kado – Windows für Entwicklung und KI",
-          "summary": "Build-Werkzeuge, die eine offizielle Windows-11-ISO auf meinem eigenen Rechner anpassen – samt Branding und Entwicklerumgebung.",
-          "points": [
-            "PowerShell-Pipeline mit DISM, Antwortdatei und Nachinstallationsskripten; Windows wird nicht mitgeliefert",
-            "Konfigurierbare App-Auswahl, eigene Logos und Wallpaper sowie Profile für Systemanpassungen",
-            "Entwickler-Stack mit WSL 2, Git, PowerShell 7, VS Code, uv, Node.js und Ollama",
-            "Ein ISO-Build ist durchgelaufen. Installation in einer VM und Vorher-nachher-Messungen stehen noch aus"
+        'kado': {
+          'icon': 'monitor',
+          'status': 'wip',
+          'category': 'Windows und Entwicklung',
+          'title': 'Kado – Windows für Entwicklung und KI',
+          'summary': 'Build-Werkzeuge, die eine offizielle Windows-11-ISO auf meinem eigenen Rechner anpassen – samt Branding und Entwicklerumgebung.',
+          'points': [
+            'PowerShell-Pipeline mit DISM, Antwortdatei und Nachinstallationsskripten; Windows wird nicht mitgeliefert',
+            'Konfigurierbare App-Auswahl, eigene Logos und Wallpaper sowie Profile für Systemanpassungen',
+            'Entwickler-Stack mit WSL 2, Git, PowerShell 7, VS Code, uv, Node.js und Ollama',
+            'Ein ISO-Build ist durchgelaufen. Installation in einer VM und Vorher-nachher-Messungen stehen noch aus'
           ],
-          "stack": [
-            "PowerShell",
-            "Windows ADK",
-            "DISM",
-            "WSL 2",
-            "Python",
-            "Node.js"
+          'stack': [
+            'PowerShell',
+            'Windows ADK',
+            'DISM',
+            'WSL 2',
+            'Python',
+            'Node.js'
           ]
         },
-        "chromefever": {
-          "icon": "gamepad-2",
-          "status": "prototype",
-          "category": "Spieleentwicklung",
-          "title": "Chrome Fever",
-          "summary": "Ein spielbarer Cyberpunk-Shooter im Browser. Auf einem verregneten Neon-Nachtmarkt kämpfe ich gegen immer stärkere Gegnerwellen.",
-          "points": [
-            "Three.js ohne Build-Schritt, mit Toon-Look, Bloom und Steuerung für Desktop und Touch",
-            "Drei Waffen, Overclock-Zeitlupe, Cyberware-Upgrades und ein Boss nach jeder fünften Welle",
-            "Figuren, Stadt, Soundeffekte und Musik entstehen im Code statt aus externen Asset-Dateien",
-            "Der Prototyp ist spielbar; Three.js und Fonts werden beim Start aus dem Netz geladen"
+        'chromefever': {
+          'icon': 'gamepad-2',
+          'status': 'prototype',
+          'category': 'Spieleentwicklung',
+          'title': 'Chrome Fever',
+          'summary': 'Ein spielbarer Cyberpunk-Shooter im Browser. Auf einem verregneten Neon-Nachtmarkt kämpfe ich gegen immer stärkere Gegnerwellen.',
+          'points': [
+            'Three.js ohne Build-Schritt, mit Toon-Look, Bloom und Steuerung für Desktop und Touch',
+            'Drei Waffen, Overclock-Zeitlupe, Cyberware-Upgrades und ein Boss nach jeder fünften Welle',
+            'Figuren, Stadt, Soundeffekte und Musik entstehen im Code statt aus externen Asset-Dateien',
+            'Der Prototyp ist spielbar; Three.js und Fonts werden beim Start aus dem Netz geladen'
           ],
-          "stack": [
-            "Three.js",
-            "JavaScript",
-            "WebGL",
-            "Web Audio"
+          'stack': [
+            'Three.js',
+            'JavaScript',
+            'WebGL',
+            'Web Audio'
           ]
         },
-        "claudeskills": {
-          "icon": "sparkles",
-          "category": "KI-Werkzeuge",
-          "title": "Claude Skills",
-          "summary": "Meine Sammlung wiederverwendbarer Skills für Claude und kompatible Coding-Assistenten – mit Anleitungen, Skripten und Vorlagen.",
-          "points": [
-            "Themen von Entwicklung und Design bis Automatisierung, Marketing und Security Research",
-            "Jeder Skill hat eine eigene SKILL.md; ein Index hilft bei der Auswahl",
-            "Die Sammlung verbindet eigene Ergänzungen mit importierten Skills und deren Lizenzhinweisen",
-            "Skills und ihre Werkzeuge prüfe ich vor dem Einsatz; sie können Befehle ausführen und haben eigene Voraussetzungen"
+        'claudeskills': {
+          'icon': 'sparkles',
+          'category': 'KI-Werkzeuge',
+          'title': 'Claude Skills',
+          'summary': 'Meine Sammlung wiederverwendbarer Skills für Claude und kompatible Coding-Assistenten – mit Anleitungen, Skripten und Vorlagen.',
+          'points': [
+            'Themen von Entwicklung und Design bis Automatisierung, Marketing und Security Research',
+            'Jeder Skill hat eine eigene SKILL.md; ein Index hilft bei der Auswahl',
+            'Die Sammlung verbindet eigene Ergänzungen mit importierten Skills und deren Lizenzhinweisen',
+            'Skills und ihre Werkzeuge prüfe ich vor dem Einsatz; sie können Befehle ausführen und haben eigene Voraussetzungen'
           ],
-          "stack": [
-            "Claude",
-            "Markdown",
-            "Python",
-            "JavaScript",
-            "Shell"
+          'stack': [
+            'Claude',
+            'Markdown',
+            'Python',
+            'JavaScript',
+            'Shell'
           ]
         },
-        "tickets": {
-          "icon": "ticket",
-          "status": "wip",
-          "category": "Full-Stack",
-          "title": "Ticketsystem für die interne IT",
-          "summary": "Eine Web-Anwendung, in der Mitarbeitende IT-Probleme melden und das IT-Team sie in einer gemeinsamen Übersicht bearbeitet.",
-          "points": [
-            "Automatische Zuweisung nach Fachgebiet und Auslastung mit nachvollziehbarer Begründung",
-            "Rollen für Mitarbeitende, IT und Admins, Live-Updates und E-Mail-Benachrichtigungen",
-            "Listen- und Boardansicht, Filter, Termine, interne Notizen und dokumentierte Lösungen",
-            "Die Anwendungsbasis steht; Wissensdatenbank, KI-Unterstützung und Pilot sind weitere Ausbaustufen"
+        'tickets': {
+          'icon': 'ticket',
+          'status': 'wip',
+          'category': 'Full-Stack',
+          'title': 'Ticketsystem für die interne IT',
+          'summary': 'Eine Web-Anwendung, in der Mitarbeitende IT-Probleme melden und das IT-Team sie in einer gemeinsamen Übersicht bearbeitet.',
+          'points': [
+            'Automatische Zuweisung nach Fachgebiet und Auslastung mit nachvollziehbarer Begründung',
+            'Rollen für Mitarbeitende, IT und Admins, Live-Updates und E-Mail-Benachrichtigungen',
+            'Listen- und Boardansicht, Filter, Termine, interne Notizen und dokumentierte Lösungen',
+            'Die Anwendungsbasis steht; Wissensdatenbank, KI-Unterstützung und Pilot sind weitere Ausbaustufen'
           ],
-          "stack": [
-            "Node.js",
-            "Fastify",
-            "TypeScript",
-            "PostgreSQL",
-            "React",
-            "Vite",
-            "Docker"
+          'stack': [
+            'Node.js',
+            'Fastify',
+            'TypeScript',
+            'PostgreSQL',
+            'React',
+            'Vite',
+            'Docker'
           ]
         },
-        "automation": {
-          "icon": "workflow",
-          "status": "wip",
-          "category": "Automatisierung und KI",
-          "title": "Postfach-Automatisierung mit KI",
-          "summary": "n8n-Workflows, die eingehende Service-Anfragen einordnen und interne Vorschläge vorbereiten, ergänzt um ein Dashboard.",
-          "points": [
-            "Azure OpenAI liefert strukturierte Ergebnisse, die der Workflow vor der Weiterverarbeitung prüft",
-            "Vorschläge bleiben intern und werden von einem Menschen geprüft; der Workflow verschickt keine Antworten",
-            "Workflows entstehen aus einem Generator und werden gegen nachgebaute Schnittstellen getestet",
-            "Für das Dashboard gibt es eine Demo mit erfundenen Daten. Pilot, reale Integrationen und Produktivbetrieb stehen noch aus"
+        'automation': {
+          'icon': 'workflow',
+          'status': 'wip',
+          'category': 'Automatisierung und KI',
+          'title': 'Postfach-Automatisierung mit KI',
+          'summary': 'n8n-Workflows, die eingehende Service-Anfragen einordnen und interne Vorschläge vorbereiten, ergänzt um ein Dashboard.',
+          'points': [
+            'Azure OpenAI liefert strukturierte Ergebnisse, die der Workflow vor der Weiterverarbeitung prüft',
+            'Vorschläge bleiben intern und werden von einem Menschen geprüft; der Workflow verschickt keine Antworten',
+            'Workflows entstehen aus einem Generator und werden gegen nachgebaute Schnittstellen getestet',
+            'Für das Dashboard gibt es eine Demo mit erfundenen Daten. Pilot, reale Integrationen und Produktivbetrieb stehen noch aus'
           ],
-          "stack": [
-            "n8n",
-            "Azure OpenAI",
-            "Microsoft 365",
-            "TypeScript",
-            "PostgreSQL",
-            "Docker"
+          'stack': [
+            'n8n',
+            'Azure OpenAI',
+            'Microsoft 365',
+            'TypeScript',
+            'PostgreSQL',
+            'Docker'
           ]
         },
-        "colvex": {
-          "icon": "globe",
-          "status": "wip",
-          "category": "Web und Betrieb",
-          "title": "colvex – Website und Portal",
-          "summary": "Ein früheres eigenes Projekt, das eine zweisprachige Website, ein Kundenportal und Werkzeuge für Automatisierung und Betrieb verbindet.",
-          "points": [
-            "Astro-Website auf Deutsch und Englisch mit gemeinsamer visueller Identität",
-            "Portal mit Fastify, React und PostgreSQL sowie API- und Browser-Tests",
-            "n8n-Workflows, Ubuntu-Server-Einrichtung, Monitoring und Statusseite",
-            "Nicht als fertiger Dienst veröffentlicht. Der öffentliche Auftritt ist heute dieses persönliche Portfolio"
+        'colvex': {
+          'icon': 'globe',
+          'status': 'wip',
+          'category': 'Web und Betrieb',
+          'title': 'colvex – Website und Portal',
+          'summary': 'Ein früheres eigenes Projekt, das eine zweisprachige Website, ein Kundenportal und Werkzeuge für Automatisierung und Betrieb verbindet.',
+          'points': [
+            'Astro-Website auf Deutsch und Englisch mit gemeinsamer visueller Identität',
+            'Portal mit Fastify, React und PostgreSQL sowie API- und Browser-Tests',
+            'n8n-Workflows, Ubuntu-Server-Einrichtung, Monitoring und Statusseite',
+            'Nicht als fertiger Dienst veröffentlicht. Der öffentliche Auftritt ist heute dieses persönliche Portfolio'
           ],
-          "stack": [
-            "Astro",
-            "Fastify",
-            "React",
-            "PostgreSQL",
-            "n8n",
-            "Ansible"
+          'stack': [
+            'Astro',
+            'Fastify',
+            'React',
+            'PostgreSQL',
+            'n8n',
+            'Ansible'
           ]
         },
-        "portfolio": {
-          "icon": "layout-template",
-          "status": "live",
-          "category": "Web",
-          "title": "Dieses Portfolio",
-          "summary": "Die Website, auf der du gerade bist: meine Projekte, Fähigkeiten und ein kurzer Einblick in meine Arbeit.",
-          "points": [
-            "Deutsch und Englisch mit Astro und TypeScript; die Inhalte bleiben auch ohne JavaScript lesbar",
-            "Selbst gehostete Fonts, keine Analyse-Skripte und keine eingebetteten Drittanbieter-Inhalte",
-            "Responsive Darstellung, Tastaturbedienung und reduzierte Animation bei entsprechender Systemeinstellung",
-            "Statischer Build auf Cloudflare und öffentlicher Quellcode mit direkten Links zu den Projekten"
+        'portfolio': {
+          'icon': 'layout-template',
+          'status': 'live',
+          'category': 'Web',
+          'title': 'Dieses Portfolio',
+          'summary': 'Die Website, auf der du gerade bist: meine Projekte, Fähigkeiten und ein kurzer Einblick in meine Arbeit.',
+          'points': [
+            'Deutsch und Englisch mit Astro und TypeScript; die Inhalte bleiben auch ohne JavaScript lesbar',
+            'Selbst gehostete Fonts, keine Analyse-Skripte und keine eingebetteten Drittanbieter-Inhalte',
+            'Responsive Darstellung, Tastaturbedienung und reduzierte Animation bei entsprechender Systemeinstellung',
+            'Statischer Build auf Cloudflare und öffentlicher Quellcode mit direkten Links zu den Projekten'
           ],
-          "stack": [
-            "Astro",
-            "TypeScript",
-            "CSS",
-            "Cloudflare"
+          'stack': [
+            'Astro',
+            'TypeScript',
+            'CSS',
+            'Cloudflare'
           ]
         }
       }
@@ -371,182 +371,182 @@ export const copy: Record<Lang, Copy> = {
     },
     presentation: { details: 'Inside the project', system: 'How my homelab connects', server: 'Foundation', containers: 'Services', monitoring: 'Monitoring', alerts: 'Alerts' },
     projects: {
-      "title": "My projects",
-      "intro": "What I run, experiment with and keep developing. Public projects link directly to their source on GitHub.",
-      "hint": "I build many of these with Claude Code. The goals, structure and review come from me.",
-      "stack": "Stack",
-      "source": "View source on GitHub",
-      "privateSource": "Private project",
-      "status": {
-        "wip": "In progress",
-        "prototype": "Playable prototype",
-        "active": "In use",
-        "live": "Live"
+      'title': 'My projects',
+      'intro': 'What I run, experiment with and keep developing. Public projects link directly to their source on GitHub.',
+      'hint': 'I build many of these with Claude Code. The goals, structure and review come from me.',
+      'stack': 'Stack',
+      'source': 'View source on GitHub',
+      'privateSource': 'Private project',
+      'status': {
+        'wip': 'In progress',
+        'prototype': 'Playable prototype',
+        'active': 'In use',
+        'live': 'Live'
       },
-      "items": {
-        "homelab": {
-          "icon": "server",
-          "status": "active",
-          "category": "Homelab and operations",
-          "title": "My homelab: servers, services and monitoring",
-          "summary": "My Ubuntu server running Docker Compose, where I bring together self-hosted services, monitoring and automation.",
-          "points": [
-            "Traefik routes access to services; I reach administrative interfaces through SSH tunnels",
-            "Prometheus, Grafana and Uptime Kuma for metrics and availability, Loki and Alloy for logs",
-            "Gitea, n8n and other services live in separate Compose projects with their own configuration",
-            "Public templates and scripts for setup, health checks and backups with seven-day retention"
+      'items': {
+        'homelab': {
+          'icon': 'server',
+          'status': 'active',
+          'category': 'Homelab and operations',
+          'title': 'My homelab: servers, services and monitoring',
+          'summary': 'My Ubuntu server running Docker Compose, where I bring together self-hosted services, monitoring and automation.',
+          'points': [
+            'Traefik routes access to services; I reach administrative interfaces through SSH tunnels',
+            'Prometheus, Grafana and Uptime Kuma for metrics and availability, Loki and Alloy for logs',
+            'Gitea, n8n and other services live in separate Compose projects with their own configuration',
+            'Public templates and scripts for setup, health checks and backups with seven-day retention'
           ],
-          "stack": [
-            "Ubuntu",
-            "Docker Compose",
-            "Traefik",
-            "Prometheus",
-            "Grafana",
-            "Loki",
-            "n8n",
-            "Gitea"
+          'stack': [
+            'Ubuntu',
+            'Docker Compose',
+            'Traefik',
+            'Prometheus',
+            'Grafana',
+            'Loki',
+            'n8n',
+            'Gitea'
           ]
         },
-        "kado": {
-          "icon": "monitor",
-          "status": "wip",
-          "category": "Windows and development",
-          "title": "Kado – Windows for development and AI",
-          "summary": "Build tools that customize an official Windows 11 ISO on my own PC, including branding and a developer environment.",
-          "points": [
-            "A PowerShell pipeline with DISM, an answer file and post-install scripts; Windows itself is not distributed",
-            "Configurable app selection, custom logos and wallpapers, and profiles for system adjustments",
-            "A developer stack with WSL 2, Git, PowerShell 7, VS Code, uv, Node.js and Ollama",
-            "One ISO build has completed. A VM installation and before-and-after measurements are still pending"
+        'kado': {
+          'icon': 'monitor',
+          'status': 'wip',
+          'category': 'Windows and development',
+          'title': 'Kado – Windows for development and AI',
+          'summary': 'Build tools that customize an official Windows 11 ISO on my own PC, including branding and a developer environment.',
+          'points': [
+            'A PowerShell pipeline with DISM, an answer file and post-install scripts; Windows itself is not distributed',
+            'Configurable app selection, custom logos and wallpapers, and profiles for system adjustments',
+            'A developer stack with WSL 2, Git, PowerShell 7, VS Code, uv, Node.js and Ollama',
+            'One ISO build has completed. A VM installation and before-and-after measurements are still pending'
           ],
-          "stack": [
-            "PowerShell",
-            "Windows ADK",
-            "DISM",
-            "WSL 2",
-            "Python",
-            "Node.js"
+          'stack': [
+            'PowerShell',
+            'Windows ADK',
+            'DISM',
+            'WSL 2',
+            'Python',
+            'Node.js'
           ]
         },
-        "chromefever": {
-          "icon": "gamepad-2",
-          "status": "prototype",
-          "category": "Game development",
-          "title": "Chrome Fever",
-          "summary": "A playable cyberpunk shooter in the browser, set in a rainy neon night market with increasingly difficult enemy waves.",
-          "points": [
-            "Three.js with no build step, a toon look, bloom, and controls for desktop and touch",
-            "Three weapons, Overclock slow motion, cyberware upgrades and a boss every fifth wave",
-            "Characters, city, sound effects and music are generated in code rather than loaded from asset files",
-            "The prototype is playable; Three.js and fonts load from the network at startup"
+        'chromefever': {
+          'icon': 'gamepad-2',
+          'status': 'prototype',
+          'category': 'Game development',
+          'title': 'Chrome Fever',
+          'summary': 'A playable cyberpunk shooter in the browser, set in a rainy neon night market with increasingly difficult enemy waves.',
+          'points': [
+            'Three.js with no build step, a toon look, bloom, and controls for desktop and touch',
+            'Three weapons, Overclock slow motion, cyberware upgrades and a boss every fifth wave',
+            'Characters, city, sound effects and music are generated in code rather than loaded from asset files',
+            'The prototype is playable; Three.js and fonts load from the network at startup'
           ],
-          "stack": [
-            "Three.js",
-            "JavaScript",
-            "WebGL",
-            "Web Audio"
+          'stack': [
+            'Three.js',
+            'JavaScript',
+            'WebGL',
+            'Web Audio'
           ]
         },
-        "claudeskills": {
-          "icon": "sparkles",
-          "category": "AI tools",
-          "title": "Claude Skills",
-          "summary": "My collection of reusable skills for Claude and compatible coding assistants, with instructions, scripts and templates.",
-          "points": [
-            "Topics range from development and design to automation, marketing and security research",
-            "Each skill has its own SKILL.md, with an index to help choose the right one",
-            "The collection combines my own additions with imported skills and their license notices",
-            "I review skills and their tools before use: they can run commands and have their own prerequisites"
+        'claudeskills': {
+          'icon': 'sparkles',
+          'category': 'AI tools',
+          'title': 'Claude Skills',
+          'summary': 'My collection of reusable skills for Claude and compatible coding assistants, with instructions, scripts and templates.',
+          'points': [
+            'Topics range from development and design to automation, marketing and security research',
+            'Each skill has its own SKILL.md, with an index to help choose the right one',
+            'The collection combines my own additions with imported skills and their license notices',
+            'I review skills and their tools before use: they can run commands and have their own prerequisites'
           ],
-          "stack": [
-            "Claude",
-            "Markdown",
-            "Python",
-            "JavaScript",
-            "Shell"
+          'stack': [
+            'Claude',
+            'Markdown',
+            'Python',
+            'JavaScript',
+            'Shell'
           ]
         },
-        "tickets": {
-          "icon": "ticket",
-          "status": "wip",
-          "category": "Full stack",
-          "title": "Ticket system for internal IT",
-          "summary": "A web application where employees report IT problems and the IT team handles them in a shared workspace.",
-          "points": [
-            "Automatic assignment by expertise and workload, with a readable explanation",
-            "Roles for employees, IT and administrators, live updates and email notifications",
-            "List and board views, filters, appointments, internal notes and documented resolutions",
-            "The application foundation is implemented; a knowledge base, AI assistance and a pilot are later stages"
+        'tickets': {
+          'icon': 'ticket',
+          'status': 'wip',
+          'category': 'Full stack',
+          'title': 'Ticket system for internal IT',
+          'summary': 'A web application where employees report IT problems and the IT team handles them in a shared workspace.',
+          'points': [
+            'Automatic assignment by expertise and workload, with a readable explanation',
+            'Roles for employees, IT and administrators, live updates and email notifications',
+            'List and board views, filters, appointments, internal notes and documented resolutions',
+            'The application foundation is implemented; a knowledge base, AI assistance and a pilot are later stages'
           ],
-          "stack": [
-            "Node.js",
-            "Fastify",
-            "TypeScript",
-            "PostgreSQL",
-            "React",
-            "Vite",
-            "Docker"
+          'stack': [
+            'Node.js',
+            'Fastify',
+            'TypeScript',
+            'PostgreSQL',
+            'React',
+            'Vite',
+            'Docker'
           ]
         },
-        "automation": {
-          "icon": "workflow",
-          "status": "wip",
-          "category": "Automation and AI",
-          "title": "Mailbox automation with AI",
-          "summary": "n8n workflows that classify incoming service requests and prepare internal suggestions, supported by a dashboard.",
-          "points": [
-            "Azure OpenAI returns structured results that the workflow validates before further processing",
-            "Suggestions stay internal for a person to review; the workflow does not send replies",
-            "Workflows are built from a generator and tested against mocked interfaces",
-            "The dashboard has a demo with fictitious data. A pilot, real integrations and production operation are still pending"
+        'automation': {
+          'icon': 'workflow',
+          'status': 'wip',
+          'category': 'Automation and AI',
+          'title': 'Mailbox automation with AI',
+          'summary': 'n8n workflows that classify incoming service requests and prepare internal suggestions, supported by a dashboard.',
+          'points': [
+            'Azure OpenAI returns structured results that the workflow validates before further processing',
+            'Suggestions stay internal for a person to review; the workflow does not send replies',
+            'Workflows are built from a generator and tested against mocked interfaces',
+            'The dashboard has a demo with fictitious data. A pilot, real integrations and production operation are still pending'
           ],
-          "stack": [
-            "n8n",
-            "Azure OpenAI",
-            "Microsoft 365",
-            "TypeScript",
-            "PostgreSQL",
-            "Docker"
+          'stack': [
+            'n8n',
+            'Azure OpenAI',
+            'Microsoft 365',
+            'TypeScript',
+            'PostgreSQL',
+            'Docker'
           ]
         },
-        "colvex": {
-          "icon": "globe",
-          "status": "wip",
-          "category": "Web and operations",
-          "title": "colvex – website and portal",
-          "summary": "An earlier project of my own, combining a bilingual website, a customer portal and tools for automation and operations.",
-          "points": [
-            "An Astro website in German and English with a shared visual identity",
-            "A portal using Fastify, React and PostgreSQL, with API and browser tests",
-            "n8n workflows, Ubuntu server setup, monitoring and a status page",
-            "Not launched as a finished service. This personal portfolio is my current public website"
+        'colvex': {
+          'icon': 'globe',
+          'status': 'wip',
+          'category': 'Web and operations',
+          'title': 'colvex – website and portal',
+          'summary': 'An earlier project of my own, combining a bilingual website, a customer portal and tools for automation and operations.',
+          'points': [
+            'An Astro website in German and English with a shared visual identity',
+            'A portal using Fastify, React and PostgreSQL, with API and browser tests',
+            'n8n workflows, Ubuntu server setup, monitoring and a status page',
+            'Not launched as a finished service. This personal portfolio is my current public website'
           ],
-          "stack": [
-            "Astro",
-            "Fastify",
-            "React",
-            "PostgreSQL",
-            "n8n",
-            "Ansible"
+          'stack': [
+            'Astro',
+            'Fastify',
+            'React',
+            'PostgreSQL',
+            'n8n',
+            'Ansible'
           ]
         },
-        "portfolio": {
-          "icon": "layout-template",
-          "status": "live",
-          "category": "Web",
-          "title": "This portfolio",
-          "summary": "The website you are looking at: my projects, skills and a short introduction to how I work.",
-          "points": [
-            "English and German with Astro and TypeScript; the content stays readable without JavaScript",
-            "Self-hosted fonts, no analytics scripts and no embedded third-party content",
-            "Responsive layouts, keyboard access and reduced animation when requested by system preferences",
-            "A static build on Cloudflare, with public source code and direct links to the projects"
+        'portfolio': {
+          'icon': 'layout-template',
+          'status': 'live',
+          'category': 'Web',
+          'title': 'This portfolio',
+          'summary': 'The website you are looking at: my projects, skills and a short introduction to how I work.',
+          'points': [
+            'English and German with Astro and TypeScript; the content stays readable without JavaScript',
+            'Self-hosted fonts, no analytics scripts and no embedded third-party content',
+            'Responsive layouts, keyboard access and reduced animation when requested by system preferences',
+            'A static build on Cloudflare, with public source code and direct links to the projects'
           ],
-          "stack": [
-            "Astro",
-            "TypeScript",
-            "CSS",
-            "Cloudflare"
+          'stack': [
+            'Astro',
+            'TypeScript',
+            'CSS',
+            'Cloudflare'
           ]
         }
       }
