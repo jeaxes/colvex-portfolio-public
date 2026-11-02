@@ -4,7 +4,9 @@ Source of the colvex portfolio: a single page with projects, skills and a short 
 
 It is a static [Astro 7](https://astro.build) site in the Colvex Brand Kit 2.0. That means the blue-black background `#05070d`, the electric blue `#4c8dff`, Albert Sans with IBM Plex Mono, and the "Raster" logo.
 
-The site sets no cookies and loads nothing from third parties. A small script, `public/site.js`, adds a few enhancements:
+The site sets no cookies of its own and loads nothing from third parties. It is hosted on Cloudflare, which adds its own layer on top: depending on the zone settings, Cloudflare injects a bot-protection script (`/cdn-cgi/challenge-platform`) and prefetch hints into the served page. The strict CSP (see below) allows scripts from the site origin only, so an injected inline script is blocked. What Cloudflare itself does with a visitor stays outside the site's control.
+
+A small script, `public/site.js`, adds a few enhancements:
 - the scroll reveals
 - the top bar that turns into a pill on scroll
 - the mobile menu behaviour
