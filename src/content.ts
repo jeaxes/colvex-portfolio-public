@@ -72,7 +72,7 @@ interface Project {
 }
 
 interface Copy {
-  meta: { title: string; description: string };
+  meta: { title: string; description: string; imageAlt: string };
   a11y: { skip: string; home: string; nav: string; langSwitch: string; menu: string };
   nav: { projects: string; skills: string; about: string; contact: string };
   hero: { lead: string; primary: string; secondary: string };
@@ -105,6 +105,7 @@ export const copy: Record<Lang, Copy> = {
       title: 'colvex | Homelab, Automatisierung und Systemintegration',
       description:
         'Portfolio von colvex: Projekte rund um Homelab, Server, Automatisierung, Software und Monitoring.',
+      imageAlt: 'Das colvex Raster-Logo auf dunkelblauem Hintergrund.',
     },
     a11y: {
       skip: 'Zum Inhalt springen',
@@ -349,6 +350,7 @@ export const copy: Record<Lang, Copy> = {
       title: 'colvex | homelab, automation and systems integration',
       description:
         'Portfolio of colvex: projects in homelab, servers, automation, software and monitoring.',
+      imageAlt: 'The colvex Raster logo on a dark blue background.',
     },
     a11y: {
       skip: 'Skip to content',
