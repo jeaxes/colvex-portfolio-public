@@ -125,8 +125,8 @@ export const copy: Record<Lang, Copy> = {
     presentation: { details: 'Einblick ins Projekt', system: 'So hängt mein Homelab zusammen', server: 'Basis', containers: 'Dienste', monitoring: 'Monitoring', alerts: 'Meldungen' },
     projects: {
       'title': 'Meine Projekte',
-      'intro': 'Was ich betreibe, ausprobiere und weiterentwickle. Zu öffentlichen Projekten findest du den Code direkt auf GitHub.',
-      'hint': 'Viele Projekte baue ich mit Claude Code und meinem eigenen OpenCode-Setup. Ziel, Aufbau und Prüfung kommen von mir.',
+      'intro': 'Was ich betreibe und weiterbaue. Bei öffentlichen Projekten führt ein Link direkt zum Code auf GitHub.',
+      'hint': 'Viele davon baue ich mit Claude Code und meinem eigenen OpenCode-Setup. Ziel und Aufbau lege ich fest, das Ergebnis prüfe ich selbst.',
       'stack': 'Technologien',
       'source': 'Code auf GitHub',
       'privateSource': 'Privates Projekt',
@@ -144,7 +144,7 @@ export const copy: Record<Lang, Copy> = {
           'title': 'Mein Homelab: Server, Dienste und Monitoring',
           'summary': 'Mein Ubuntu-Server mit Docker Compose. Hier verbinde ich selbst gehostete Dienste, Monitoring und Automatisierung.',
           'points': [
-            'Traefik bündelt den Zugriff auf die Dienste; administrative Oberflächen erreiche ich über SSH-Tunnel',
+            'Traefik bündelt den Zugriff auf die Dienste, Admin-Oberflächen erreiche ich über SSH-Tunnel',
             'Prometheus, Grafana und Uptime Kuma für Metriken und Verfügbarkeit, Loki und Alloy für Logs',
             'Gitea, n8n und weitere Dienste als getrennte Compose-Projekte mit eigener Konfiguration',
             'Öffentliche Vorlagen sowie Skripte für Einrichtung, Zustandsprüfungen und Backups mit sieben Tagen Aufbewahrung'
@@ -167,7 +167,7 @@ export const copy: Record<Lang, Copy> = {
           'title': 'Kado: Windows für Entwicklung und KI',
           'summary': 'Build-Werkzeuge, die eine offizielle Windows-11-ISO auf meinem eigenen Rechner anpassen, samt Branding und Entwicklerumgebung.',
           'points': [
-            'PowerShell-Pipeline mit DISM, Antwortdatei und Nachinstallationsskripten; Windows wird nicht mitgeliefert',
+            'PowerShell-Pipeline mit DISM, Antwortdatei und Nachinstallationsskripten. Windows selbst wird nicht mitgeliefert',
             'Konfigurierbare App-Auswahl, eigene Logos und Wallpaper sowie Profile für Systemanpassungen',
             'Entwickler-Stack mit WSL 2, Git, PowerShell 7, VS Code, uv, Node.js und Ollama',
             'Ein ISO-Build ist durchgelaufen. Installation in einer VM und Vorher-nachher-Messungen stehen noch aus'
@@ -191,7 +191,7 @@ export const copy: Record<Lang, Copy> = {
             'Three.js ohne Build-Schritt, mit Toon-Look, Bloom und Steuerung für Desktop und Touch',
             'Drei Waffen, Overclock-Zeitlupe, Cyberware-Upgrades und ein Boss nach jeder fünften Welle',
             'Figuren, Stadt, Soundeffekte und Musik entstehen im Code statt aus externen Asset-Dateien',
-            'Der Prototyp ist spielbar; Three.js und Fonts werden beim Start aus dem Netz geladen'
+            'Der Prototyp ist spielbar. Three.js und die Fonts lädt er beim Start aus dem Netz'
           ],
           'stack': [
             'Three.js',
@@ -207,9 +207,9 @@ export const copy: Record<Lang, Copy> = {
           'summary': 'Meine Sammlung wiederverwendbarer Skills für Claude und kompatible Coding-Assistenten, mit Anleitungen, Skripten und Vorlagen.',
           'points': [
             'Themen von Entwicklung und Design bis Automatisierung, Marketing und Security Research',
-            'Jeder Skill hat eine eigene SKILL.md; ein Index hilft bei der Auswahl',
+            'Jeder Skill hat eine eigene SKILL.md, ein Index hilft bei der Auswahl',
             'Die Sammlung verbindet eigene Ergänzungen mit importierten Skills und deren Lizenzhinweisen',
-            'Skills und ihre Werkzeuge prüfe ich vor dem Einsatz; sie können Befehle ausführen und haben eigene Voraussetzungen'
+            'Skills und ihre Werkzeuge prüfe ich vor dem Einsatz, weil sie Befehle ausführen können und eigene Voraussetzungen haben'
           ],
           'stack': [
             'Claude',
@@ -229,7 +229,7 @@ export const copy: Record<Lang, Copy> = {
             'OpenCode schickt Anfragen über einen lokalen LiteLLM-Router, betrieben mit Docker Compose, an OpenRouter',
             'Eigene Agenten für Rollen wie Planung, Architektur, Code, UI, Design und Review, jede mit eigenem Modell',
             'Skills kommen aus meiner eigenen Sammlung und werden erst nach Vorschau und meiner Freigabe installiert',
-            'Feste Ausgabenlimits pro Schlüssel. Kostenpflichtige Bild- und Videojobs laufen ohne meine Freigabe nur als Probelauf, das teuerste Modell starte ich nur von Hand'
+            'Ausgabenlimits pro Schlüssel. Kostenpflichtige Bild- und Videojobs laufen bis zu meiner Freigabe nur als Probelauf, das teuerste Modell starte ich nur von Hand'
           ],
           'stack': [
             'OpenCode',
@@ -250,7 +250,7 @@ export const copy: Record<Lang, Copy> = {
             'Automatische Zuweisung nach Fachgebiet und Auslastung mit nachvollziehbarer Begründung',
             'Rollen für Mitarbeitende, IT und Admins, Live-Updates und E-Mail-Benachrichtigungen',
             'Listen- und Boardansicht, Filter, Termine, interne Notizen und dokumentierte Lösungen',
-            'Die Anwendungsbasis steht; Wissensdatenbank, KI-Unterstützung und Pilot sind weitere Ausbaustufen'
+            'Die Anwendungsbasis steht. Wissensdatenbank, KI-Unterstützung und ein Pilot kommen später'
           ],
           'stack': [
             'Node.js',
@@ -270,7 +270,7 @@ export const copy: Record<Lang, Copy> = {
           'summary': 'n8n-Workflows, die eingehende Service-Anfragen einordnen und interne Vorschläge vorbereiten, ergänzt um ein Dashboard.',
           'points': [
             'Azure OpenAI liefert strukturierte Ergebnisse, die der Workflow vor der Weiterverarbeitung prüft',
-            'Vorschläge bleiben intern und werden von einem Menschen geprüft; der Workflow verschickt keine Antworten',
+            'Vorschläge bleiben intern, ein Mensch prüft sie. Der Workflow selbst verschickt keine Antworten',
             'Workflows entstehen aus einem Generator und werden gegen nachgebaute Schnittstellen getestet',
             'Für das Dashboard gibt es eine Demo mit erfundenen Daten. Pilot, reale Integrationen und Produktivbetrieb stehen noch aus'
           ],
@@ -311,7 +311,7 @@ export const copy: Record<Lang, Copy> = {
           'title': 'Dieses Portfolio',
           'summary': 'Die Website, auf der du gerade bist: meine Projekte, Fähigkeiten und ein kurzer Einblick in meine Arbeit.',
           'points': [
-            'Deutsch und Englisch mit Astro und TypeScript; die Inhalte bleiben auch ohne JavaScript lesbar',
+            'Deutsch und Englisch mit Astro und TypeScript. Die Inhalte lassen sich auch ohne JavaScript lesen',
             'Selbst gehostete Fonts, keine Analyse-Skripte und keine eingebetteten Drittanbieter-Inhalte',
             'Responsive Darstellung, Tastaturbedienung und reduzierte Animation bei entsprechender Systemeinstellung',
             'Statischer Build auf Cloudflare und öffentlicher Quellcode mit direkten Links zu den Projekten'
@@ -344,13 +344,13 @@ export const copy: Record<Lang, Copy> = {
     about: {
       title: 'Wer ich bin',
       personal: [
-        'Ich bin 18, komme aus Deutschland und lerne am liebsten, indem ich Dinge baue. Neben Software beschäftige ich mich gern mit Hardware.',
-        'Ausgleich finde ich beim Fitness, auf dem Gravelbike und beim Fotografieren.',
+        'Am meisten lerne ich, wenn ich etwas selbst baue. Neben Software bastle ich gern an Hardware.',
+        'Als Ausgleich gehe ich ins Fitnessstudio, fahre Gravelbike und fotografiere.',
       ],
       workTitle: 'Wie ich arbeite',
       work: [
-        'Ich baue viel mit Claude Code und mit meinem eigenen OpenCode-Setup, in dem getrennte Agenten Planung, Code und Review übernehmen. Ich lege fest, was entstehen soll, und schreibe die Anweisungen dafür so genau wie möglich. Von der Qualität dieser Anweisungen hängt ab, wie gut das Ergebnis wird.',
-        'Härtung und Reviews gehören bei mir fest dazu, damit alles sicher bleibt. Was der Code tut, verstehe ich meistens. Jede Zeile im Detail erklären kann ich noch nicht, und daran arbeite ich.',
+        'Ich baue viel mit Claude Code und meinem eigenen OpenCode-Setup, in dem getrennte Agenten planen, Code schreiben und prüfen. Ich lege fest, was entsteht, und schreibe die Anweisungen so genau wie möglich, denn davon hängt das Ergebnis ab.',
+        'Härtung und Reviews sind bei mir ein fester Schritt. Was der Code tut, verstehe ich meistens. Jede Zeile erklären kann ich noch nicht, daran arbeite ich.',
       ],
       facts: [
         { label: 'Alter', value: '18' },
@@ -362,7 +362,7 @@ export const copy: Record<Lang, Copy> = {
     contactSection: {
       title: 'Kontakt',
       heading: 'Schreib mir',
-      text: 'Fragen zu einem Projekt oder Lust, mich kennenzulernen? Ich freue mich über eine Nachricht.',
+      text: 'Du hast eine Frage zu einem Projekt oder eine Stelle, die passen könnte? Ich antworte gern.',
       email: 'E-Mail',
       github: 'GitHub',
       discord: 'Discord',
@@ -394,8 +394,8 @@ export const copy: Record<Lang, Copy> = {
     presentation: { details: 'Inside the project', system: 'How my homelab connects', server: 'Foundation', containers: 'Services', monitoring: 'Monitoring', alerts: 'Alerts' },
     projects: {
       'title': 'My projects',
-      'intro': 'What I run, experiment with and keep developing. Public projects link directly to their source on GitHub.',
-      'hint': 'I build many of these with Claude Code and my own OpenCode setup. The goals, structure and review come from me.',
+      'intro': 'Things I run and keep working on. Public projects link straight to their code on GitHub.',
+      'hint': 'I build many of them with Claude Code and my own OpenCode setup. I set the goal and the structure and check the result myself.',
       'stack': 'Stack',
       'source': 'View source on GitHub',
       'privateSource': 'Private project',
@@ -413,7 +413,7 @@ export const copy: Record<Lang, Copy> = {
           'title': 'My homelab: servers, services and monitoring',
           'summary': 'My Ubuntu server running Docker Compose, where I bring together self-hosted services, monitoring and automation.',
           'points': [
-            'Traefik routes access to services; I reach administrative interfaces through SSH tunnels',
+            'Traefik routes access to the services, and I reach admin interfaces through SSH tunnels',
             'Prometheus, Grafana and Uptime Kuma for metrics and availability, Loki and Alloy for logs',
             'Gitea, n8n and other services live in separate Compose projects with their own configuration',
             'Public templates and scripts for setup, health checks and backups with seven-day retention'
@@ -436,7 +436,7 @@ export const copy: Record<Lang, Copy> = {
           'title': 'Kado: Windows for development and AI',
           'summary': 'Build tools that customize an official Windows 11 ISO on my own PC, including branding and a developer environment.',
           'points': [
-            'A PowerShell pipeline with DISM, an answer file and post-install scripts; Windows itself is not distributed',
+            'A PowerShell pipeline with DISM, an answer file and post-install scripts. Windows itself is not distributed',
             'Configurable app selection, custom logos and wallpapers, and profiles for system adjustments',
             'A developer stack with WSL 2, Git, PowerShell 7, VS Code, uv, Node.js and Ollama',
             'One ISO build has completed. A VM installation and before-and-after measurements are still pending'
@@ -460,7 +460,7 @@ export const copy: Record<Lang, Copy> = {
             'Three.js with no build step, a toon look, bloom, and controls for desktop and touch',
             'Three weapons, Overclock slow motion, cyberware upgrades and a boss every fifth wave',
             'Characters, city, sound effects and music are generated in code rather than loaded from asset files',
-            'The prototype is playable; Three.js and fonts load from the network at startup'
+            'The prototype is playable. It loads Three.js and its fonts from the network at startup'
           ],
           'stack': [
             'Three.js',
@@ -478,7 +478,7 @@ export const copy: Record<Lang, Copy> = {
             'Topics range from development and design to automation, marketing and security research',
             'Each skill has its own SKILL.md, with an index to help choose the right one',
             'The collection combines my own additions with imported skills and their license notices',
-            'I review skills and their tools before use: they can run commands and have their own prerequisites'
+            'I review skills and their tools before use, because they can run commands and have their own prerequisites'
           ],
           'stack': [
             'Claude',
@@ -498,7 +498,7 @@ export const copy: Record<Lang, Copy> = {
             'OpenCode sends requests through a local LiteLLM router, run with Docker Compose, to OpenRouter',
             'Separate agents for roles such as planning, architecture, coding, UI, design and review, each with its own model',
             'Skills come from my own collection and are installed only after a preview and my approval',
-            'Fixed spending limits per key. Paid image and video jobs only run as a dry run until I approve them, and I start the most expensive model by hand only'
+            'Spending limits per key. Paid image and video jobs run as a dry run until I approve them, and I only start the most expensive model by hand'
           ],
           'stack': [
             'OpenCode',
@@ -519,7 +519,7 @@ export const copy: Record<Lang, Copy> = {
             'Automatic assignment by expertise and workload, with a readable explanation',
             'Roles for employees, IT and administrators, live updates and email notifications',
             'List and board views, filters, appointments, internal notes and documented resolutions',
-            'The application foundation is implemented; a knowledge base, AI assistance and a pilot are later stages'
+            'The application foundation is in place. A knowledge base, AI assistance and a pilot come later'
           ],
           'stack': [
             'Node.js',
@@ -536,10 +536,10 @@ export const copy: Record<Lang, Copy> = {
           'status': 'wip',
           'category': 'Automation and AI',
           'title': 'Mailbox automation with AI',
-          'summary': 'n8n workflows that classify incoming service requests and prepare internal suggestions, supported by a dashboard.',
+          'summary': 'n8n workflows that classify incoming service requests and prepare internal suggestions, plus a dashboard.',
           'points': [
             'Azure OpenAI returns structured results that the workflow validates before further processing',
-            'Suggestions stay internal for a person to review; the workflow does not send replies',
+            'Suggestions stay internal and a person reviews them. The workflow itself does not send replies',
             'Workflows are built from a generator and tested against mocked interfaces',
             'The dashboard has a demo with fictitious data. A pilot, real integrations and production operation are still pending'
           ],
@@ -580,7 +580,7 @@ export const copy: Record<Lang, Copy> = {
           'title': 'This portfolio',
           'summary': 'The website you are looking at: my projects, skills and a short introduction to how I work.',
           'points': [
-            'English and German with Astro and TypeScript; the content stays readable without JavaScript',
+            'English and German with Astro and TypeScript. The content stays readable without JavaScript',
             'Self-hosted fonts, no analytics scripts and no embedded third-party content',
             'Responsive layouts, keyboard access and reduced animation when requested by system preferences',
             'A static build on Cloudflare, with public source code and direct links to the projects'
@@ -597,7 +597,7 @@ export const copy: Record<Lang, Copy> = {
     skills: {
       title: 'What I can do',
       intro: 'Laid out like my logo. Solid means I use it at work, in my homelab or in projects. Dashed means I am learning it at vocational school or on my own.',
-      legend: { practice: 'hands-on', learning: 'school and self-study' },
+      legend: { practice: 'Hands-on', learning: 'School and self-study' },
       cells: {
         network: { title: 'Networking', practice: ['Firewalls with nftables and UFW', 'SSH tunnels'], learning: ['Subnetting', 'VLANs and routing', 'VPN'] },
         linux: { title: 'Linux and servers', practice: ['Ubuntu Server', 'Hardening with fail2ban', 'Grafana, Prometheus, Loki'], learning: ['Virtualisation'] },
@@ -613,13 +613,13 @@ export const copy: Record<Lang, Copy> = {
     about: {
       title: 'Who I am',
       personal: [
-        'I am 18, from Germany, and I learn best by building things. Besides software, I like working with hardware.',
-        'To balance things out, I do fitness, ride my gravel bike and take photos.',
+        'I learn the most when I build something myself. Besides software, I like tinkering with hardware.',
+        'Away from the desk I go to the gym, ride my gravel bike and take photos.',
       ],
       workTitle: 'How I work',
       work: [
-        'I build a lot with Claude Code and with my own OpenCode setup, where separate agents handle planning, coding and review. I decide what should be built and write the instructions as precisely as I can. The quality of those instructions decides how good the result gets.',
-        'Hardening and reviews are a fixed part of my process so that everything stays secure. I usually understand what the code does. I cannot yet explain every line in detail, and I am working on that.',
+        'I build a lot with Claude Code and my own OpenCode setup, where separate agents plan, write and review code. I decide what gets built and write the instructions as precisely as I can, since the result depends on them.',
+        'Hardening and reviews are a fixed step for me. I usually understand what the code does. I can\'t explain every line yet, and I\'m working on that.',
       ],
       facts: [
         { label: 'Age', value: '18' },
@@ -631,7 +631,7 @@ export const copy: Record<Lang, Copy> = {
     contactSection: {
       title: 'Contact',
       heading: 'Get in touch',
-      text: 'Questions about a project, or want to get to know me? I am happy to hear from you.',
+      text: 'Got a question about a project, or a role that might fit? Send me a message.',
       email: 'Email',
       github: 'GitHub',
       discord: 'Discord',
