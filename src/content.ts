@@ -125,8 +125,8 @@ export const copy: Record<Lang, Copy> = {
     presentation: { details: 'Einblick ins Projekt', system: 'So hängt mein Homelab zusammen', server: 'Basis', containers: 'Dienste', monitoring: 'Monitoring', alerts: 'Meldungen' },
     projects: {
       'title': 'Meine Projekte',
-      'intro': 'Was ich betreibe, ausprobiere und weiterentwickle. Zu öffentlichen Projekten findest du den Code direkt auf GitHub.',
-      'hint': 'Viele Projekte baue ich mit Claude Code und meinem eigenen OpenCode-Setup. Ziel, Aufbau und Prüfung kommen von mir.',
+      'intro': 'Was ich betreibe und weiterbaue. Bei öffentlichen Projekten führt ein Link direkt zum Code auf GitHub.',
+      'hint': 'Viele davon baue ich mit Claude Code und meinem eigenen OpenCode-Setup. Ziel und Aufbau lege ich fest, das Ergebnis prüfe ich selbst.',
       'stack': 'Technologien',
       'source': 'Code auf GitHub',
       'privateSource': 'Privates Projekt',
@@ -229,7 +229,7 @@ export const copy: Record<Lang, Copy> = {
             'OpenCode schickt Anfragen über einen lokalen LiteLLM-Router, betrieben mit Docker Compose, an OpenRouter',
             'Eigene Agenten für Rollen wie Planung, Architektur, Code, UI, Design und Review, jede mit eigenem Modell',
             'Skills kommen aus meiner eigenen Sammlung und werden erst nach Vorschau und meiner Freigabe installiert',
-            'Feste Ausgabenlimits pro Schlüssel. Kostenpflichtige Bild- und Videojobs laufen ohne meine Freigabe nur als Probelauf, das teuerste Modell starte ich nur von Hand'
+            'Ausgabenlimits pro Schlüssel. Kostenpflichtige Bild- und Videojobs laufen bis zu meiner Freigabe nur als Probelauf, das teuerste Modell starte ich nur von Hand'
           ],
           'stack': [
             'OpenCode',
@@ -349,8 +349,8 @@ export const copy: Record<Lang, Copy> = {
       ],
       workTitle: 'Wie ich arbeite',
       work: [
-        'Ich baue viel mit Claude Code und mit meinem eigenen OpenCode-Setup, in dem getrennte Agenten Planung, Code und Review übernehmen. Ich lege fest, was entstehen soll, und schreibe die Anweisungen dafür so genau wie möglich. Von der Qualität dieser Anweisungen hängt ab, wie gut das Ergebnis wird.',
-        'Härtung und Reviews gehören bei mir fest dazu, damit alles sicher bleibt. Was der Code tut, verstehe ich meistens. Jede Zeile im Detail erklären kann ich noch nicht, und daran arbeite ich.',
+        'Ich baue viel mit Claude Code und meinem eigenen OpenCode-Setup, in dem getrennte Agenten planen, Code schreiben und prüfen. Ich lege fest, was entsteht, und schreibe die Anweisungen so genau wie möglich, denn davon hängt das Ergebnis ab.',
+        'Härtung und Reviews sind bei mir ein fester Schritt. Was der Code tut, verstehe ich meistens. Jede Zeile erklären kann ich noch nicht, daran arbeite ich.',
       ],
       facts: [
         { label: 'Alter', value: '18' },
@@ -362,7 +362,7 @@ export const copy: Record<Lang, Copy> = {
     contactSection: {
       title: 'Kontakt',
       heading: 'Schreib mir',
-      text: 'Fragen zu einem Projekt oder Lust, mich kennenzulernen? Ich freue mich über eine Nachricht.',
+      text: 'Bei Fragen zu einem Projekt oder wenn du mich kennenlernen willst, erreichst du mich hier.',
       email: 'E-Mail',
       github: 'GitHub',
       discord: 'Discord',
@@ -394,8 +394,8 @@ export const copy: Record<Lang, Copy> = {
     presentation: { details: 'Inside the project', system: 'How my homelab connects', server: 'Foundation', containers: 'Services', monitoring: 'Monitoring', alerts: 'Alerts' },
     projects: {
       'title': 'My projects',
-      'intro': 'What I run, experiment with and keep developing. Public projects link directly to their source on GitHub.',
-      'hint': 'I build many of these with Claude Code and my own OpenCode setup. The goals, structure and review come from me.',
+      'intro': 'Things I run and keep working on. Public projects link straight to their code on GitHub.',
+      'hint': 'I build many of them with Claude Code and my own OpenCode setup. I set the goal and the structure and check the result myself.',
       'stack': 'Stack',
       'source': 'View source on GitHub',
       'privateSource': 'Private project',
@@ -498,7 +498,7 @@ export const copy: Record<Lang, Copy> = {
             'OpenCode sends requests through a local LiteLLM router, run with Docker Compose, to OpenRouter',
             'Separate agents for roles such as planning, architecture, coding, UI, design and review, each with its own model',
             'Skills come from my own collection and are installed only after a preview and my approval',
-            'Fixed spending limits per key. Paid image and video jobs only run as a dry run until I approve them, and I start the most expensive model by hand only'
+            'Spending limits per key. Paid image and video jobs run as a dry run until I approve them, and I only start the most expensive model by hand'
           ],
           'stack': [
             'OpenCode',
@@ -536,7 +536,7 @@ export const copy: Record<Lang, Copy> = {
           'status': 'wip',
           'category': 'Automation and AI',
           'title': 'Mailbox automation with AI',
-          'summary': 'n8n workflows that classify incoming service requests and prepare internal suggestions, supported by a dashboard.',
+          'summary': 'n8n workflows that classify incoming service requests and prepare internal suggestions, plus a dashboard.',
           'points': [
             'Azure OpenAI returns structured results that the workflow validates before further processing',
             'Suggestions stay internal for a person to review; the workflow does not send replies',
@@ -597,7 +597,7 @@ export const copy: Record<Lang, Copy> = {
     skills: {
       title: 'What I can do',
       intro: 'Laid out like my logo. Solid means I use it at work, in my homelab or in projects. Dashed means I am learning it at vocational school or on my own.',
-      legend: { practice: 'hands-on', learning: 'school and self-study' },
+      legend: { practice: 'Hands-on', learning: 'School and self-study' },
       cells: {
         network: { title: 'Networking', practice: ['Firewalls with nftables and UFW', 'SSH tunnels'], learning: ['Subnetting', 'VLANs and routing', 'VPN'] },
         linux: { title: 'Linux and servers', practice: ['Ubuntu Server', 'Hardening with fail2ban', 'Grafana, Prometheus, Loki'], learning: ['Virtualisation'] },
@@ -618,8 +618,8 @@ export const copy: Record<Lang, Copy> = {
       ],
       workTitle: 'How I work',
       work: [
-        'I build a lot with Claude Code and with my own OpenCode setup, where separate agents handle planning, coding and review. I decide what should be built and write the instructions as precisely as I can. The quality of those instructions decides how good the result gets.',
-        'Hardening and reviews are a fixed part of my process so that everything stays secure. I usually understand what the code does. I cannot yet explain every line in detail, and I am working on that.',
+        'I build a lot with Claude Code and my own OpenCode setup, where separate agents plan, write and review code. I decide what gets built and write the instructions as precisely as I can, since the result depends on them.',
+        'Hardening and reviews are a fixed step for me. I usually understand what the code does. I can\'t explain every line yet, and I\'m working on that.',
       ],
       facts: [
         { label: 'Age', value: '18' },
@@ -631,7 +631,7 @@ export const copy: Record<Lang, Copy> = {
     contactSection: {
       title: 'Contact',
       heading: 'Get in touch',
-      text: 'Questions about a project, or want to get to know me? I am happy to hear from you.',
+      text: 'For questions about a project, or if you want to get to know me, you can reach me here.',
       email: 'Email',
       github: 'GitHub',
       discord: 'Discord',
