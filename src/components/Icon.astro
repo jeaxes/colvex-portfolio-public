@@ -1,16 +1,20 @@
 ---
 import arrowDown from 'lucide-static/icons/arrow-down.svg?raw';
+import activity from 'lucide-static/icons/activity.svg?raw';
 import arrowUpRight from 'lucide-static/icons/arrow-up-right.svg?raw';
+import bellRing from 'lucide-static/icons/bell-ring.svg?raw';
 import discord from 'simple-icons/icons/discord.svg?raw';
 import gamepad2 from 'lucide-static/icons/gamepad-2.svg?raw';
 import github from 'simple-icons/icons/github.svg?raw';
 import globe from 'lucide-static/icons/globe.svg?raw';
+import library from 'lucide-static/icons/library.svg?raw';
 import layoutTemplate from 'lucide-static/icons/layout-template.svg?raw';
 import mail from 'lucide-static/icons/mail.svg?raw';
 import monitor from 'lucide-static/icons/monitor.svg?raw';
 import palette from 'lucide-static/icons/palette.svg?raw';
+import route from 'lucide-static/icons/route.svg?raw';
 import server from 'lucide-static/icons/server.svg?raw';
-import sparkles from 'lucide-static/icons/sparkles.svg?raw';
+import terminal from 'lucide-static/icons/terminal.svg?raw';
 import ticket from 'lucide-static/icons/ticket.svg?raw';
 import workflow from 'lucide-static/icons/workflow.svg?raw';
 
@@ -30,18 +34,22 @@ interface Props {
 const { name, size = 20 } = Astro.props;
 
 const icons: Record<string, string> = {
+  'activity': activity,
   'arrow-down': arrowDown,
   'arrow-up-right': arrowUpRight,
+  'bell-ring': bellRing,
   'brand:discord': discord,
   'brand:github': github,
   'gamepad-2': gamepad2,
   'globe': globe,
   'layout-template': layoutTemplate,
+  'library': library,
   'mail': mail,
   'monitor': monitor,
   'palette': palette,
+  'route': route,
   'server': server,
-  'sparkles': sparkles,
+  'terminal': terminal,
   'ticket': ticket,
   'workflow': workflow,
 };
