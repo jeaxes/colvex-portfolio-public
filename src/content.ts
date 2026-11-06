@@ -118,7 +118,7 @@ export const copy: Record<Lang, Copy> = {
     },
     nav: { projects: 'Projekte', skills: 'Skills', about: 'Über mich', contact: 'Kontakt' },
     hero: {
-      lead: 'Ich bin 18, mache eine Ausbildung zum Fachinformatiker für Systemintegration und baue am liebsten Server und Automatisierungen.',
+      lead: 'Ich bin 18, komme aus Deutschland und baue am liebsten Server und Automatisierungen.',
       primary: 'Projekte ansehen',
       secondary: 'Kontakt',
     },
@@ -387,7 +387,7 @@ export const copy: Record<Lang, Copy> = {
     },
     nav: { projects: 'Projects', skills: 'Skills', about: 'About', contact: 'Contact' },
     hero: {
-      lead: "I'm 18, training as an IT specialist in systems integration, and what I like building most is servers and automations.",
+      lead: "I'm 18, from Germany, and what I like building most is servers and automations.",
       primary: 'View projects',
       secondary: 'Contact',
     },
