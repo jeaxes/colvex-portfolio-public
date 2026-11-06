@@ -41,7 +41,7 @@ svg { flex-shrink: 0; } .container { width: 100%; max-width: 1320px; margin-inli
 .menu__list { position: absolute; right: 0; top: calc(100% + 12px); list-style: none; min-width: 220px; max-width: calc(100vw - 40px); padding: 10px; border: 1px solid var(--color-border-strong); border-radius: 12px; background: var(--color-surface); box-shadow: var(--shadow-overlay); } .menu__list a { display: block; padding: 12px 14px; min-height: 48px; color: var(--color-text); text-decoration: none; border-radius: 6px; } .menu__list a:hover { background: var(--color-card); }
 /* Hero: asymmetric split. Name, lead and actions on the left, the logo raster as the visual on the right. */
 .hero { min-height: min(88svh, 760px); display: grid; align-items: center; padding: 96px var(--gutter) 80px; }
-.hero__inner { width: 100%; max-width: 1320px; margin-inline: auto; display: grid; grid-template-columns: minmax(0,1.35fr) minmax(0,1fr); align-items: center; gap: clamp(32px,6vw,96px); }
+.hero__inner { width: 100%; max-width: calc(1320px - 2 * var(--gutter)); margin-inline: auto; display: grid; grid-template-columns: minmax(0,1.35fr) minmax(0,1fr); align-items: center; gap: clamp(32px,6vw,96px); }
 .hero__text { display: grid; justify-items: start; gap: 28px; }
 .lockup__mark { justify-self: end; width: clamp(180px,26vw,360px); height: auto; overflow: visible; }
 .lockup__cell { fill: var(--color-text); transform-box: fill-box; transform-origin: center; animation: cell-in 420ms var(--motion-ease) both; animation-delay: calc(200ms + var(--i) * var(--motion-logo-cell)); }
