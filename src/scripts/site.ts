@@ -21,35 +21,49 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 
 // 2. Top bar on the home page: hidden over the hero, then a floating pill once the page scrolls.
 //    Without this file the bar stays visible (see .site-header--auto in global.css).
+//    A sentinel 80px below the top of the page replaces a scroll listener: once it leaves the viewport, the bar shows.
 const header = document.querySelector('.site-header--auto');
-if (header) {
+if (header && 'IntersectionObserver' in window) {
   header.classList.add('is-enhanced');
-  const syncHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 80);
-  syncHeader();
-  window.addEventListener('scroll', syncHeader, { passive: true });
+  const sentinel = document.createElement('div');
+  sentinel.className = 'scroll-sentinel';
+  sentinel.setAttribute('aria-hidden', 'true');
+  document.body.prepend(sentinel);
+  new IntersectionObserver(([entry]) => {
+    header.classList.toggle('is-scrolled', !entry.isIntersecting && entry.boundingClientRect.top < 0);
+  }).observe(sentinel);
 }
 
 // 3. Mark the nav link of the section in view (blue). Uses aria-current so screen readers hear it too.
+//    Observers fire only when a section crosses the line at 35% of the viewport or the footer comes into view.
 const navLinks = [...document.querySelectorAll<HTMLAnchorElement>('a[data-section]')];
 const tracked = [...new Set(navLinks.map((link) => link.dataset.section))]
   .map((id) => document.getElementById(id ?? ''))
   .filter((section): section is HTMLElement => section !== null);
-if (tracked.length) {
+if (tracked.length && 'IntersectionObserver' in window) {
+  let footerVisible = false;
   const syncCurrent = () => {
     const line = window.innerHeight * 0.35;
-    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
     let current: string | null = null;
     for (const section of tracked) {
       if (section.getBoundingClientRect().top <= line) current = section.id;
     }
-    if (atBottom) current = tracked[tracked.length - 1].id;
+    if (footerVisible) current = tracked[tracked.length - 1].id;
     for (const link of navLinks) {
       if (link.dataset.section === current) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
     }
   };
+  const lineObserver = new IntersectionObserver(syncCurrent, { rootMargin: '-35% 0px -65% 0px' });
+  for (const section of tracked) lineObserver.observe(section);
+  const footer = document.querySelector('.site-footer');
+  if (footer) {
+    new IntersectionObserver(([entry]) => {
+      footerVisible = entry.isIntersecting;
+      syncCurrent();
+    }).observe(footer);
+  }
   syncCurrent();
-  window.addEventListener('scroll', syncCurrent, { passive: true });
   window.addEventListener('resize', syncCurrent);
 }
 
