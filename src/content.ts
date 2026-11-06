@@ -29,6 +29,7 @@ export const projectRepositories = {
   kado: 'https://github.com/jeaxes/Kado-public',
   chromefever: 'https://github.com/jeaxes/Chrome-Fever-public',
   claudeskills: 'https://github.com/jeaxes/claude-skills-public',
+  studio: null,
   portfolio: 'https://github.com/jeaxes/colvex-portfolio-public',
   tickets: null,
   automation: null,
@@ -125,7 +126,7 @@ export const copy: Record<Lang, Copy> = {
     projects: {
       'title': 'Meine Projekte',
       'intro': 'Was ich betreibe, ausprobiere und weiterentwickle. Zu öffentlichen Projekten findest du den Code direkt auf GitHub.',
-      'hint': 'Viele Projekte baue ich mit Claude Code. Ziel, Aufbau und Prüfung kommen von mir.',
+      'hint': 'Viele Projekte baue ich mit Claude Code und meinem eigenen OpenCode-Setup. Ziel, Aufbau und Prüfung kommen von mir.',
       'stack': 'Technologien',
       'source': 'Code auf GitHub',
       'privateSource': 'Privates Projekt',
@@ -163,8 +164,8 @@ export const copy: Record<Lang, Copy> = {
           'icon': 'monitor',
           'status': 'wip',
           'category': 'Windows und Entwicklung',
-          'title': 'Kado – Windows für Entwicklung und KI',
-          'summary': 'Build-Werkzeuge, die eine offizielle Windows-11-ISO auf meinem eigenen Rechner anpassen – samt Branding und Entwicklerumgebung.',
+          'title': 'Kado: Windows für Entwicklung und KI',
+          'summary': 'Build-Werkzeuge, die eine offizielle Windows-11-ISO auf meinem eigenen Rechner anpassen, samt Branding und Entwicklerumgebung.',
           'points': [
             'PowerShell-Pipeline mit DISM, Antwortdatei und Nachinstallationsskripten; Windows wird nicht mitgeliefert',
             'Konfigurierbare App-Auswahl, eigene Logos und Wallpaper sowie Profile für Systemanpassungen',
@@ -200,10 +201,10 @@ export const copy: Record<Lang, Copy> = {
           ]
         },
         'claudeskills': {
-          'icon': 'sparkles',
+          'icon': 'library',
           'category': 'KI-Werkzeuge',
           'title': 'Claude Skills',
-          'summary': 'Meine Sammlung wiederverwendbarer Skills für Claude und kompatible Coding-Assistenten – mit Anleitungen, Skripten und Vorlagen.',
+          'summary': 'Meine Sammlung wiederverwendbarer Skills für Claude und kompatible Coding-Assistenten, mit Anleitungen, Skripten und Vorlagen.',
           'points': [
             'Themen von Entwicklung und Design bis Automatisierung, Marketing und Security Research',
             'Jeder Skill hat eine eigene SKILL.md; ein Index hilft bei der Auswahl',
@@ -216,6 +217,27 @@ export const copy: Record<Lang, Copy> = {
             'Python',
             'JavaScript',
             'Shell'
+          ]
+        },
+        'studio': {
+          'icon': 'route',
+          'status': 'active',
+          'category': 'KI-Werkzeuge',
+          'title': 'Creative Studio: mein OpenCode-Setup',
+          'summary': 'Mein eigenes OpenCode-Setup, das ich neben Claude Code nutze. Ein lokaler Router gibt jede Agenten-Rolle an ein Modell, das zur Aufgabe passt.',
+          'points': [
+            'OpenCode schickt Anfragen über einen lokalen LiteLLM-Router, betrieben mit Docker Compose, an OpenRouter',
+            'Eigene Agenten für Rollen wie Planung, Architektur, Code, UI, Design und Review, jede mit eigenem Modell',
+            'Skills kommen aus meiner eigenen Sammlung und werden erst nach Vorschau und meiner Freigabe installiert',
+            'Feste Ausgabenlimits pro Schlüssel. Kostenpflichtige Bild- und Videojobs laufen ohne meine Freigabe nur als Probelauf, das teuerste Modell starte ich nur von Hand'
+          ],
+          'stack': [
+            'OpenCode',
+            'LiteLLM',
+            'OpenRouter',
+            'Docker Compose',
+            'PostgreSQL',
+            'Python'
           ]
         },
         'tickets': {
@@ -265,7 +287,7 @@ export const copy: Record<Lang, Copy> = {
           'icon': 'globe',
           'status': 'wip',
           'category': 'Web und Betrieb',
-          'title': 'colvex – Website und Portal',
+          'title': 'colvex: Website und Portal',
           'summary': 'Ein früheres eigenes Projekt, das eine zweisprachige Website, ein Kundenportal und Werkzeuge für Automatisierung und Betrieb verbindet.',
           'points': [
             'Astro-Website auf Deutsch und Englisch mit gemeinsamer visueller Identität',
@@ -316,7 +338,7 @@ export const copy: Record<Lang, Copy> = {
         security: { title: 'Security', practice: ['Kali-Lab'], learning: ['Pentest-Tools wie nmap und Burp', 'TryHackMe und Hack The Box'] },
         code: { title: 'Code und Daten', practice: ['Python', 'HTML, CSS und Astro'], learning: ['SQL', 'ER-Modelle und Normalisierung'] },
       },
-      center: { title: 'Claude Code', items: ['Genaue Anweisungen', 'Reviews', 'Härtung'] },
+      center: { title: 'Claude Code und OpenCode', items: ['Genaue Anweisungen', 'Eigenes Agenten-Setup', 'Reviews', 'Härtung'] },
       open: { title: 'Das freie Feld', text: 'Im Logo bleibt ein Feld offen. Als Nächstes kommen hier Infrastructure as Code und mehr Dienste fürs Homelab rein.' },
     },
     about: {
@@ -327,7 +349,7 @@ export const copy: Record<Lang, Copy> = {
       ],
       workTitle: 'Wie ich arbeite',
       work: [
-        'Ich baue viel mit Claude Code. Ich lege fest, was entstehen soll, und schreibe die Anweisungen dafür so genau wie möglich. Von der Qualität dieser Anweisungen hängt ab, wie gut das Ergebnis wird.',
+        'Ich baue viel mit Claude Code und mit meinem eigenen OpenCode-Setup, in dem getrennte Agenten Planung, Code und Review übernehmen. Ich lege fest, was entstehen soll, und schreibe die Anweisungen dafür so genau wie möglich. Von der Qualität dieser Anweisungen hängt ab, wie gut das Ergebnis wird.',
         'Härtung und Reviews gehören bei mir fest dazu, damit alles sicher bleibt. Was der Code tut, verstehe ich meistens. Jede Zeile im Detail erklären kann ich noch nicht, und daran arbeite ich.',
       ],
       facts: [
@@ -373,7 +395,7 @@ export const copy: Record<Lang, Copy> = {
     projects: {
       'title': 'My projects',
       'intro': 'What I run, experiment with and keep developing. Public projects link directly to their source on GitHub.',
-      'hint': 'I build many of these with Claude Code. The goals, structure and review come from me.',
+      'hint': 'I build many of these with Claude Code and my own OpenCode setup. The goals, structure and review come from me.',
       'stack': 'Stack',
       'source': 'View source on GitHub',
       'privateSource': 'Private project',
@@ -411,7 +433,7 @@ export const copy: Record<Lang, Copy> = {
           'icon': 'monitor',
           'status': 'wip',
           'category': 'Windows and development',
-          'title': 'Kado – Windows for development and AI',
+          'title': 'Kado: Windows for development and AI',
           'summary': 'Build tools that customize an official Windows 11 ISO on my own PC, including branding and a developer environment.',
           'points': [
             'A PowerShell pipeline with DISM, an answer file and post-install scripts; Windows itself is not distributed',
@@ -448,7 +470,7 @@ export const copy: Record<Lang, Copy> = {
           ]
         },
         'claudeskills': {
-          'icon': 'sparkles',
+          'icon': 'library',
           'category': 'AI tools',
           'title': 'Claude Skills',
           'summary': 'My collection of reusable skills for Claude and compatible coding assistants, with instructions, scripts and templates.',
@@ -464,6 +486,27 @@ export const copy: Record<Lang, Copy> = {
             'Python',
             'JavaScript',
             'Shell'
+          ]
+        },
+        'studio': {
+          'icon': 'route',
+          'status': 'active',
+          'category': 'AI tools',
+          'title': 'Creative Studio: my OpenCode setup',
+          'summary': 'My own OpenCode setup that I use next to Claude Code. A local router hands each agent role to a model that suits the job.',
+          'points': [
+            'OpenCode sends requests through a local LiteLLM router, run with Docker Compose, to OpenRouter',
+            'Separate agents for roles such as planning, architecture, coding, UI, design and review, each with its own model',
+            'Skills come from my own collection and are installed only after a preview and my approval',
+            'Fixed spending limits per key. Paid image and video jobs only run as a dry run until I approve them, and I start the most expensive model by hand only'
+          ],
+          'stack': [
+            'OpenCode',
+            'LiteLLM',
+            'OpenRouter',
+            'Docker Compose',
+            'PostgreSQL',
+            'Python'
           ]
         },
         'tickets': {
@@ -513,7 +556,7 @@ export const copy: Record<Lang, Copy> = {
           'icon': 'globe',
           'status': 'wip',
           'category': 'Web and operations',
-          'title': 'colvex – website and portal',
+          'title': 'colvex: website and portal',
           'summary': 'An earlier project of my own, combining a bilingual website, a customer portal and tools for automation and operations.',
           'points': [
             'An Astro website in German and English with a shared visual identity',
@@ -564,7 +607,7 @@ export const copy: Record<Lang, Copy> = {
         security: { title: 'Security', practice: ['Kali lab'], learning: ['Pentest tools like nmap and Burp', 'TryHackMe and Hack The Box'] },
         code: { title: 'Code and data', practice: ['Python', 'HTML, CSS and Astro'], learning: ['SQL', 'ER models and normalisation'] },
       },
-      center: { title: 'Claude Code', items: ['Precise instructions', 'Reviews', 'Hardening'] },
+      center: { title: 'Claude Code and OpenCode', items: ['Precise instructions', 'Own agent setup', 'Reviews', 'Hardening'] },
       open: { title: 'The open cell', text: 'One cell in my logo stays open. Next up: infrastructure as code and more services for my homelab.' },
     },
     about: {
@@ -575,7 +618,7 @@ export const copy: Record<Lang, Copy> = {
       ],
       workTitle: 'How I work',
       work: [
-        'I build a lot with Claude Code. I decide what should be built and write the instructions as precisely as I can. The quality of those instructions decides how good the result gets.',
+        'I build a lot with Claude Code and with my own OpenCode setup, where separate agents handle planning, coding and review. I decide what should be built and write the instructions as precisely as I can. The quality of those instructions decides how good the result gets.',
         'Hardening and reviews are a fixed part of my process so that everything stays secure. I usually understand what the code does. I cannot yet explain every line in detail, and I am working on that.',
       ],
       facts: [

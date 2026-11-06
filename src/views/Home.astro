@@ -19,7 +19,7 @@ const liveLinks = links.filter((link) => link.href);
 
 /** Logo cells in build order: the C is drawn from top right to bottom right, the blue centre comes last. */
 const markCells: [number, number][] = [[2, 0], [1, 0], [0, 0], [0, 1], [0, 2], [1, 2], [2, 2]];
-const projectOrder: ProjectId[] = ['homelab', 'kado', 'chromefever', 'claudeskills', 'tickets', 'automation', 'colvex', 'portfolio'];
+const projectOrder: ProjectId[] = ['homelab', 'kado', 'chromefever', 'claudeskills', 'studio', 'tickets', 'automation', 'colvex', 'portfolio'];
 /** Skill cells in reading order, so the mobile stack follows the 3x3 raster. */
 const rasterOrder = [
   ...skillCells.slice(0, 4),
@@ -84,8 +84,8 @@ const rasterOrder = [
               <ol class="system-map__nodes">
                 <li><span>{t.presentation.server}</span><strong>Ubuntu Server</strong><Icon name="server" size={24} /></li>
                 <li><span>{t.presentation.containers}</span><strong>Docker Compose</strong><Icon name="workflow" size={24} /></li>
-                <li><span>{t.presentation.monitoring}</span><strong>Prometheus · Grafana</strong><Icon name="globe" size={24} /></li>
-                <li><span>{t.presentation.alerts}</span><strong>n8n · Telegram · Gitea</strong><Icon name="arrow-up-right" size={24} /></li>
+                <li><span>{t.presentation.monitoring}</span><strong>Prometheus · Grafana</strong><Icon name="activity" size={24} /></li>
+                <li><span>{t.presentation.alerts}</span><strong>n8n · Telegram · Gitea</strong><Icon name="bell-ring" size={24} /></li>
               </ol>
             </figure>}
           </li>
@@ -107,7 +107,7 @@ const rasterOrder = [
       {rasterOrder.map((entry) => {
         if (entry === 'center') return (
           <article class="raster__cell raster__cell--center" data-col="2" data-row="2" data-reveal>
-            <h3><Icon name="sparkles" size={20} />{t.skills.center.title}</h3>
+            <h3><Icon name="terminal" size={20} />{t.skills.center.title}</h3>
             <ul class="tags">
               {t.skills.center.items.map((item) => <li>{item}</li>)}
             </ul>
